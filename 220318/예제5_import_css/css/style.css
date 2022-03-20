@@ -1,0 +1,5 @@
+@charset "UTF-8";
+body { background-color: grey; color: white; }
+body { background-color: blue; }
+body { background-color: purple; }
+/* 가장마지막에 정의된게 우선 순위 */

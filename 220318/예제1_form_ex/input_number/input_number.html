@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>input number</title>
+  </head>
+  <body>
+    <h1>select device</h1>
+    <form method="get">
+      <!-- 보안이 필요한거는 get으로 하면 주소값에 다 보여서 post로 해야함 -->
+      <select id="kind" name="kind">
+        <option value="phone">phone</option>
+        <option value="tablet">tablet</option>
+      </select>
+      <select id="kindofdevice" name="kindofdevice">
+        <optgroup label="phone">
+          <option value="galaxy">galaxy</option>
+          <option value="iphone">iphone</option>
+          <option value="googlephone">googlephone</option>
+        </optgroup>
+        <optgroup label="tablet">
+          <option value="galaxytab" selected>galaxytab</option>
+          <option value="ipad">ipad</option>
+        </optgroup>
+      </select>
+      <input id="quantity" type="number" name="quantity" min="0" max="10" step="1" value="1">
+      <button type="submit">구매하기</button>
+    </form>
+  </body>
+</html>
