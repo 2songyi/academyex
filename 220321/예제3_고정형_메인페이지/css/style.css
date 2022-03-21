@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* body.text-color.bg { background: blue; }
+body.bg { background: yellow; }
+body { background: red; }
+body.text-color {color: red; } */
+/* 다중으로 체인을 걸면 가장 구체적인게 우선순위가 높다 */
+
+
+/* line heigth줄간격 60px
+로고 왼쪽 배치
+gnb : 오른쪽 배치
+->ul > li 왼쪽배치
+li 와 li 간격 : 10px (마지막요소는 간격 삭제) */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  /* 전체 상속 가능 */
+}
+
+#header {
+ overflow: hidden;
+ border: 1px solid #f1f1f1;
+ /* 헤더아래쪽 선 */
+ padding: 15px;
+}
+
+#header #logo {
+  float: left;
+}
+
+#header #logo a{
+  line-height: 60px;
+  font-weight: 100;
+  /* font-family: 'Monoton', cursive; */
+  font-family: 'Permanent Marker', cursive;
+}
+
+#header #gnb ul {
+  overflow: hidden;
+}
+
+#header #gnb ul li {
+  float: right;
+  height: 60px;
+  margin-right: 10px;
+}
+
+#header #gnb ul li:last-child {
+  margin-right: 0;
+}
+
+#header #gnb ul li a {
+  line-height: 60px;
+  padding: 10px;
+}
+
+/* main banner area */
+#mainbanner {
+  height: 850px;
+  background-image: url('../img/main_banner_img.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* cover는 가로세로중에 작은 사이즈를 기준으로 꽉 채워서 보여줌 */
+}
+
+/* gallery area */
+#container {
+  width: 1200px;
+  min-height: 500px;
+  margin: 0 auto;
+  /* 가운데정렬 */
+}
+
+#container h2 {
+  text-align: center;
+  color: #666666;
+  padding: 30px 0 15px;
+  margin-bottom: 15px;
+  border: 1px solid #f1f1f1;
+}
+
+#container section {
+  overflow: hidden;
+}
+
+/* items 공통 스타일 */
+#container section .items h3 {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  /* 이 패딩 풀어쓰면 다음과 같음
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0; */
+
+}
+
+#container section .items img {
+  width: 100%;
+}
+
+/* type-a area */
+#container section.type-a .items {
+/* 아이템들 가로로 만드는 작*/
+  float: left;
+  width: calc( 25% - 40px );
+  min-height: 100px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+#container section.type-a .items .bg-box {
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+
+  #container section.type-a .items:nth-child(4n+1) .bg-box {
+    background-image: url('../img/m_01.png')
+  }
+  #container section.type-a .items:nth-child(4n+2) .bg-box {
+    background-image: url('../img/m_02.png')
+  }
+  #container section.type-a .items:nth-child(4n+3) .bg-box {
+    background-image: url('../img/m_03.png')
+  }
+  #container section.type-a .items:nth-child(4n+4) .bg-box {
+    background-image: url('../img/m_04.png')
+  }
+
+  /* type-b area */
+  #container section.type-b .items {
+    float: left;
+    width: 25%;
+    text-align: center;
+  }
+
+#container section.type-b .items .box {
+  min-height: 100px;
+  margin: 0 10px 20px;
+  padding: 10px;
+  border: 1px solid #f1f1f1;
+}
+
+#footer {
+  text-align:center;
+  border-top: 1px solid #f1f1f1;
+  padding: 20px 0;
+  margin-top: 50px;
+  background: #f9f9f9;
+}
+
+#footer .inner{
+  /* 가운데정렬 */
+  width: 1200px;
+  margin: 0 auto; 
+}

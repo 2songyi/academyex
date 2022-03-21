@@ -1,0 +1,96 @@
+@charset "UTF-8";
+#header {
+  /* 아이디는 #으로 불러옴 */
+  border-bottom: 1px solid #f1f1f1;
+  /* padding: 0 0 0 0; top기준으로 시계방향-right-bottom-left*/
+  /* padding: 0 0 0;  */
+  padding: 0 15px;
+  overflow: hidden;
+  /* 자식요소꺼 float해서 사라지는거 잡아줌. 안쓰면 회색선 위로 떠버린다  */
+}
+
+#gnb {
+  float: right;
+}
+
+#gnb ul {
+  overflow: hidden;
+  /* li의 부모 ul을 잡아주는 설정  */
+}
+
+#gnb ul li {
+  /* 자식요소를 선택할때는 띄어쓰기하고 선택한다 */
+  float: left;
+  /* 메뉴 가로로 */
+  height: 60px;
+  margin-right: 10px;
+  /* 메뉴사이사이 간격 */
+}
+
+#gnb ul li:last-child {
+  /* 가상요소. last-child로 그 안에 가장 마지막요소 선택-menu6 */
+  margin-right : 0;
+}
+
+/* #gnb ul li:first-child {
+  margin-left: 50px;
+} */
+
+/* 첫번째 메뉴 폰트색 바꾸기/ 부모형제의 첫번째 li의 a태그 */
+/* #gnb ul li:first-child a{
+  color: red;
+} */
+
+#gnb ul li a {
+  line-height: 60px;
+}
+
+#container {
+  width: 1200px;
+  /* 가운데정렬하는 첫번째 방법 width가 정해져있을때 */
+  margin: 0 auto;
+  /* 탑,바텀 0/ 좌우auto 좌우를 똑같이 배분하겠다 */
+  min-height: 500px;
+  /* 특정영역을 차지하고 있어야할때 사용 */
+}
+
+#container h2 {
+  /* 어떤부모영역의 텍스트를 정렬하고 싶다 */
+  text-align: center;
+  color: #666666;
+  padding: 30px 0 15px;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom : 15px;
+}
+
+#container section {
+  overflow: hidden;
+}
+
+#container section .items {
+  float: left;
+  /* width: 25%; */
+  width: calc( 25% - 72px );
+  border: 1px solid red;
+  height: 100px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  /* box-sizing: border-box; */
+  /* border영역까지 width를 포함시키겠다 */
+}
+
+#container section .items:last-child {
+  margin-right: 0;
+/* 가장오른쪽 영역 불필요한 부분 제거 */
+}
+
+#footer {
+  text-align: center;
+  border-top: 1px solid #f1f1f1;
+}
+/* 부모요소는(선) 가득 차있고 자식요소는 1200px만큼 가운데정렬되어있음 */
+#footer .inner {
+  width: 1200px;
+  margin: 0 auto;
+  /* 가운데정렬 */
+}
