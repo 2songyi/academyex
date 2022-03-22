@@ -1,0 +1,19 @@
+@charset "UTF-8";
+#container p:nth-child(1) {
+  color: red;
+  /* 모든 자식요소중에 첫번째가 p가아니고 span이라 색을 못넣음 */
+}
+
+#container p:nth-of-type(1) {
+  color: red;
+  /* 여러태그가 섞여있을때는 타입을 콕 찝어야함 */
+}
+
+#container div:nth-of-type(3) {
+  background: yellow;
+}
+
+#container div:nth-last-of-type(3) {
+  background: skyblue;
+  /* 뒤에서부터 몇번째 */
+}
