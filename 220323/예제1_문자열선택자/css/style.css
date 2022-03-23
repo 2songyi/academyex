@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+input[type=password] { background: gray; }
+/* html에 있는 type속성을 가지고 설정하고 싶을 때 이런식으로 작성 */
+
+.input-wrap input[name*=s] {
+  /* s가들어간 모든걸 선택하고 싶을때 , 더 디테일해서 위에꺼보다 우선순위 높음*/
+  background: skyblue; }
+
+.gnb {
+  background: #f1f1f1;
+}
+
+/* 다중클래스는 .붙여서 자식클래스는 띄워서 */
+.gnb.yellow {
+  background: yellow;
+}
+
+.gnb.black {
+  background: black;
+}
+
+.gnb ul {
+  overflow: hidden;
+}
+
+.gnb ul li {
+  float: left;
+}
+
+.gnb ul li {
+  height: 30px;
+}
+
+.gnb ul li a {
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.gnb[class~=topmenu] {
+  /* 속성 안의 값이 특정 값을 단어로 포함하는 문서 객체를 선택 */
+  display: none;
+}
+
+.location div[class|=ko-lang] {
+  /* 속성 안의 값이 특정 값을 단어로 포함하는 문서 객체를 선택  -앞단어를 인식
+  다중클래스로 들어가도 첫번째 클래스의 -앞부분만 인식하는 단점이 있음.*/
+  color: skyblue;
+}
+
+.thumbnail ul {
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.thumbnail ul li {
+  width: calc( 25% - 20px );
+  margin: 0 10px;
+  float: left;
+}
+
+
+.thumbnail ul li a img {
+  width: 100%;
+  /* 원래이미지 다 나타냄 */
+}
+
+.thumbnail ul li:nth-child(2) {
+  opacity: 0.5;
+  /* 투명도 , 부모 요소에 넣으면 자식요소까지 영향을 받기때문에 자식요소에 넣음(자식요소에 상속) */
+}
+
+.thumbnail ul li a[href^=https] img {
+  /* 특정 값으로 시작하는 단어로 포함하는거 선택 */
+  opacity: .5;
+}
+
+.thumbnail ul li a img[src$=png] {
+  /* 특정 값으로 끝나는 단어로 포함(png로 끝나는 단어들만 테두리를 준다) */
+  border: 3px solid red;
+  /* border-width: 3px, -style: solid, -color:red */
+  box-sizing: border-box;
+}
