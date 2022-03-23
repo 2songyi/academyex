@@ -56,4 +56,16 @@
   margin-right: 10px;
 }
 
-#container
+#container section .items:last-child {
+  margin-right: 0;
+}
+
+#footer {
+  text-align: center;
+  border-top: 1px solid #f1f1f1;
+}
+
+#footer .inner {
+  width: 1200px;
+  margin: 0 auto;
+}
