@@ -1,0 +1,37 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+
+div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  top: 0px;
+  left: 0px;
+  font-size: 2rem;
+  color: black;
+  background-color: rgba(76, 124, 176, 1);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 1);
+  /* background-color: skyblue; */
+  transition-property: top, left, box-shadow, width, background-color, opacity, border-radius; /*이렇게 길때는 all*/
+  /* opacity: 0; */
+  /* transition-property: width, background-color; 이렇게 다중속성으로 넣으면 가로로는 넓어지지만 heigth는 애니메이션이 안걸림 */
+  transition-duration: 0.5s; /* width를 몇초동안 움직일거냐 */
+  transition-timing-function: ease-in;
+  /* transition-delay: 1s; /* 마우스올리고몇초 뒤에 이동할건지 */
+  border-radius: 0px 0px;
+}
+
+div:hover { /* 마우스올렸을때 이렇게 변하게 하는 */
+  /* width: 500px;
+  height: 800px; */
+  top: 10px;
+  left: 10px;
+  background-color: skyblue;
+  /* opacity: 1; /*투명도*/
+  background-color: rgba(104, 62, 156, 1);
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.5);/* 그림자생기게 */
+  border-radius: 50% 50%;
+}

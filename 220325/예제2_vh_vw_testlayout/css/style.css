@@ -1,0 +1,193 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* 상단으로 이동 버튼 */
+#go-to-top {
+  position: fixed; /*위치*/
+  bottom: 10px;
+  right: 20px;
+  display: inline-block;/* inline-block 속성은 width등등 크기 변경 가능 */
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f1f1f1;
+  border-radius: 20px;/* 모서리 둥글게 만들기 , 20px로 설정하면 반지름*2=40px이 되어 원이 됨*/
+  overflow: hidden;
+}
+
+#go-to-top a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: url('../img/go_to_top.png');
+  background-position: center center;
+  background-color: white;/* white=#ffffff=rgbo(255,255,255,1) */
+}
+
+/* 상단 헤더 영역 */
+#header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+
+  border-bottom: 1px solid #f1f1f1; /* 언더라인을 만들어줌  */
+  overflow: hidden;
+  padding: 0 15px; /* div요소는 블럭요소 */
+
+  background-color: rgba(255,255,255, .75);
+}
+
+/* 상단 로고 영역 */
+#logo {
+  float: left;
+}
+
+#logo h1 a {
+  line-height: 60px;
+  font-weight: 100;
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;; /* uppercase하면 대문자로 바꿔줌, lowercase는 소문자, capitalize첫글자만 대문자 */
+}
+
+/* 상단 gnb 영역 */
+#gnb {
+  margin-right: 30px;
+  float: right;
+}
+
+#gnb ul {
+  overflow: hidden; /* li에 float를 줬으니 부모요소에 overflow를 줘야함 */
+}
+
+#gnb ul li {
+  float: left;
+  height: 60px;
+  margin-right: 10px;  /* 메뉴와 메뉴사이의 간격 */
+}
+
+/* #gnb ul li:nth-child(even) a {
+  (odd홀수 even짝수/ 배수를 사용할때는 n을 사용해서 2n이런식으로 사용함)
+  color: red;
+} */
+
+/* #gnb ul li:nth-child(n) a {
+  color: red;
+} */
+
+#gnb ul li:last-child {
+  margin-right: 0;
+  /* 마지막요소의 margin-right요소 없애주기 */
+}
+
+#gnb ul li a {
+  line-height: 60px;
+}
+
+/* 메인 배너 영역 */
+#mainbanner {
+  /* height: 850px; */
+  /* height: calc( 100vh - 61px ); */
+  height: 100vh;
+  background-image: url(../img/main_banner_img.jpg);
+  background-position: center top;
+  background-size: cover;
+}
+
+/* 컨텐츠 (갤러리) 영역 */
+#container {
+  width: 1200px;
+  min-height: 500px;
+  /* 컨텐츠가 없을때도 min만큼의 크기를 차지하고 있어야함 */
+  margin: 0 auto; /*가운데 정렬*/
+}
+
+#container h2 {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  color: #666666;
+  padding: 30px 0 15px;
+  /* left,right=0 */
+  text-transform: uppercase;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 15px;
+}
+
+/* section 공통 스타일 */
+#container section {
+  overflow: hidden;
+}
+
+
+#container section .items {
+  float: left;
+  /* type-a랑 b랑 공통속성 */
+}
+
+#container section .items h3 {
+  /* 갤러리와 마이포토 thumb title처럼 공통부분을 묶어서 스타일 설정 */
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 10px;
+}
+
+#container section .items img {
+  width: 100%;
+}
+
+/* type-a */
+#container section.type-a .items {
+ /* 너비정해진 상태에서 padding넣으니까 넘침 그래서 40px빼줘야함*/
+  /* width: calc( 25% - 40px ); box-sizing속성 사용하지 않으면 이렇게 40px빼줘야한다 */
+  width: 25%;
+  min-height: 100px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  /* 웬만하면 비슷한 속성끼리는 순서대로 같이 작성하기 */
+}
+
+#container section.type-a .items .bg-box {
+  height: 150px;
+  background-size: cover;
+  /* cover나 contain같은 속성은 공통으로 들어가니까 공통 속성 줌 */
+}
+
+/* bg-box에 개별 이미지 들어가니까 개별속성 준다 */
+#container section.type-a .items:nth-child(4n+1) .bg-box {
+  background-image: url('../img/m_01.png')
+}
+#container section.type-a .items:nth-child(4n+2) .bg-box {
+  background-image: url('../img/m_02.png')
+}
+#container section.type-a .items:nth-child(4n+3) .bg-box {
+  background-image: url('../img/m_03.png')
+}
+#container section.type-a .items:nth-child(4n+4) .bg-box {
+  background-image: url('../img/m_04.png')
+}
+
+/* type-b */
+#container section.type-b .items {
+  /* float는 이미 상위에서 정의했음 사이즈만 정하면 됨*/
+  width: 25%; /* 이거만하면 사이즈 꽉참 margin과 padding을 안에서 줘서 빈공간 만들어준다*/
+  text-align: center;
+}
+
+#container section.type-b .items .box {
+  min-height: 100px;
+  border: 1px solid #f1f1f1;
+  margin: 0 10px 20px;
+  padding: 10px;  /* 안쪽으로 파고들어감 */
+}
+
+/* 하단 footer영역 */
+#footer {
+  text-align: center;   /* 텍스트를 가운데로 모아주는 역할 */
+  border-top: 1px solid #f1f1f1;
+  padding: 20px 0; /*위아래 패딩값을 줌*/
+  margin-top: 50px;  /* 컨테이너와 푸터 사이에 공간을 띄우는 역할 */
+  background: #f9f9f9;
+}
+
+#footer .inner {
+  width: 1200px;
+  margin: 0 auto;
+}

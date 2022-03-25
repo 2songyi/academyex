@@ -1,0 +1,52 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+body { background: skyblue; }
+#wrap {
+  display: flex; /* 컨텐츠 가운데 정렬 */
+  justify-content: center; /* 좌우에 대한 정렬 */
+  align-items: center;
+  height: 100vh;
+}
+
+#wrap:before {
+  content: 'skyblue';
+  font-size: 2em;
+  /* em:부모영역에 폰트사이즈가 정해져있으면 그거 따라감
+  현재 부모요소는 body=16px, 2em=32px*/
+  color: white;
+}
+
+/* media query area */
+
+@media screen and ( max-width: 992px ) {
+  body { background: green; } /*992px로 내려가면 배경색이 green으로 바뀜*/
+  #wrap:before {
+    content: 'green';
+  }
+}
+@media screen and ( max-width: 600px ) {
+  body { background: blue; font-size: 14px;}
+  #wrap:before {
+    content: 'blue';
+  }
+}
+/* 뒤에 작성할수록 우선순위가 높기때문에 좁은 범위를 먼저 써버리면 먹혀버림 그런데 폰트사이즈는 줄어든다
+동일속성을 새로 정의하지 않았기 때문 */
+/* max쓸때 숫자가 낮을수록 뒤에 배치해야한다 (내림차순) min은 오름차순*/
+
+/* @media screen and ( min-width: 320px ) and ( max-width: 450px ) {
+  body { background: yellow; font-size: 10px; }
+  #wrap:before {
+    content: 'yellow';
+    color: #666666;
+  }
+} */
+
+/* 320px이하는 바로 위에 media 상속받아 적용 됨 */
+
+@media screen and ( orientation: landscape ) {
+  body { background: black; } /*가로모드일때 black*/
+}
+@media screen and ( orientation: portrait ) {
+  body { background: white; } /*세로모드일때 white*/
+}

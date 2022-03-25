@@ -1,0 +1,51 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+img { width: 100%; }
+
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-items: flex-start; 맨위로 착 붙음 */
+  width: 100vw;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  width: 1200px;
+  height: 300px;
+}
+
+.content .items{
+  width: 25%;
+}
+
+.content .items .inner {
+  position: relative;
+  /* 마우스를 두면 (자식영역)absolute로 주고 이미지 확대하려면 부모영역에서 relative로 잡아줌 */
+  width: 100%;
+  border: 1px solid #f1f1f1;
+  height: 295px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content .items .inner > img {
+  position: absolute;
+  /* 위에 relative를 인해주면 body영역까지 올라가서 사진 높이가 꽉 차게 됨 100%로 */
+  top: 0;
+  left: 0;
+  transition: .5s;
+  /* transition-property: all;
+  transition-duration: .5s;
+  transition-delay: 0s;
+  transition-timing-function: easy; */
+  transform-origin: center; /*중심점*/
+}
+
+.content .items .inner:hover > img {
+  /* width: 120%; 이거만 쓰면 무조건 좌측상단만 확대 됨*/
+  transform: scale( 1.2, 1.2 );
+  /* 확대되는 비율 scale(x축, y축)  1.2=120%*/
+}

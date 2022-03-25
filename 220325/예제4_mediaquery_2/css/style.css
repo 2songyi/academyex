@@ -1,0 +1,47 @@
+@charset "UTF-8";
+html, body { height: 100% }
+
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#wrap:before {
+  content: 'pc';
+  font-size: 4em;
+  color: black;
+}
+
+@media screen and ( max-width: 1200px ) {
+  body { background: #ffcfcc;  }
+  #wrap:before {
+    content: 'middle';
+    font-size: 40px;
+  }
+}
+
+@media screen and ( max-width: 1024px ) {
+  body { background: #cff5ff;  }
+  #wrap:before {
+    content: 'desktop';
+    font-size: 30px;
+  }
+}
+
+@media screen and ( max-width: 768px ) {
+  body { background: #b8e3d0;  }
+  #wrap:before {
+    content: 'pad';
+    font-size: 20px;
+  }
+}
+
+@media screen and ( max-width: 380px ) {
+  body { background: #d8e3b8;  }
+  #wrap:before {
+    content: 'mobile';
+    font-size: 15px;
+  }
+}

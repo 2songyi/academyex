@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+html, body { height: 100%; }
+
+input#toggle { display: none; }
+
+/* toogle, wrap은 은접해있으니 인접섵택자 */
+input#toggle + #wrap > #toggle-gnb-wrap { display : none; }
+input#toggle:checked + #wrap > #toggle-gnb-wrap { display : block; }
+/* 토글(샌드위치버튼)선택했을때만 메뉴1-8 보여야함 */
+
+/* 상단 영역 */
+#main-header {
+  position: relative;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background-image: url('../img/header_background.png');   /* 이미지 x축으로 1px짜리 반복해서 늘리기 */
+}
+
+#main-header > a, #main-header > label {
+  position: absolute;
+  display: block;
+  height: 32px; /*버튼 이미지높이*/
+}
+
+#main-header h1 a {
+  color: white;
+  font-weight: bold;
+}
+
+#main-header > a.left {
+  width: 62px;
+  top: 7px;
+  left: 5px;
+  background-image: url('../img/bg_sprites.png');
+  background-position: 0 0; /*x축 y축*/
+  /* background-position: -10px -10px; bg2이미지 사용 시  */
+  overflow: hidden;
+  text-indent: -9999px; /* 텍스트들여쓰기 브라우저밖으로 던져버림*/
+}
+
+#main-header > label.right {
+  width: 32px;
+  top: 7px;
+  right: 5px;
+  background-image: url('../img/bg_sprites.png');
+  background-position: -62px 0;
+  /* button 이미지 width=62px이니까 그걸 왼쪽으로 쭉 땡겨서*/
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+/* #main-header > label.right {
+  width: 32px;
+  top: 7px;
+  right: 5px;
+  background-image: url('../img/bg2.png');
+  background-position: -10px -62px;
+  /* 이미지의 여백값이 10px
+  overflow: hidden;
+  text-indent: -9999px;
+} */
+
+/* toggle gnb */
+#toggle-gnb-wrap {
+  background: #363636;
+  padding: 15px;
+}
+
+#toggle-gnb > ul { overflow: hidden; }
+#toggle-gnb > ul > li {
+  width: 80px;
+  float: left;
+  text-align: center;
+}
+#toggle-gnb > ul > li > a {
+  color: white;
+}
+
+/* top gnb */
+/* float방식 */
+#top-gnb {
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  background: #b42111;
+}
+
+#top-gnb > div {
+  float: left;
+  width: 25%;
+}
+
+#top-gnb > div > a {
+  display: inline-block;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  color: white;
+}
+
+/* bottom -gnb */
+/* table 방식 : n등분 안하고 100%로 width값 해도 균등하게 들어가는 이유가 테이블이기 때문이다. */
+#bottom-gnb {
+  display: table; /* 테이블 속성을 가지게 됨 */
+  width: 100%; /* 100 으로 줘야지 부모영역을 꽉 채우게 됨 */
+  border-bottom: 1px solid black;
+}
+
+#bottom-gnb > div {
+  position: relative;
+  /* 밑에 before에 absoute를 넣어서 여기도 포지션 잡아줘야함 */
+  display: table-cell; /*td역할을 해라*/
+  height: 35px;
+  vertical-align: middle;
+}
+
+#bottom-gnb > div > a {
+  display: block;
+  text-align: center;
+}
+
+
+/* 메뉴사이에 분리bar생성 */
+
+#bottom-gnb > div:before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background: black;
+  top: calc( 50% - 7.5px );
+  left: -1px;
+  /* 경계선에 있는 bar들 선 굵기가 2px이라 1px씩 더 가야함 */
+}
+
+/* 불필요한 첫번째 padding, bar제거 */
+#bottom-gnb > div:first-child:before {
+  display: none;
+}
+
+#section-article { padding: 10px; }
+#section-article h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#section-article time + p {
+  /* time뒤에 어떤 요소(p)가 있다면 그 사이에 margin은 주자 */
+  margin-top : 20px;
+}
+
+#footer {
+  height: 50px;
+  text-align: center;
+  border-top: 2px solid black;
+}
+
+#footer span {
+  display: block;
+  line-height: 50px;
+}

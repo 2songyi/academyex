@@ -1,0 +1,57 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+
+#graph {
+  width: 610px;
+  border: 3px solid black;
+}
+
+.bar {
+  width: 10px;
+  height: 50px;
+  background-color: orange;
+  margin: 5px;
+  /* property주지 않으면 transition-property: all;(default)과 같다.  */
+  transition-duration: 3s; /* 5초동안 진행 */
+
+}
+
+#graph:hover > .bar {
+/* 그래프에 마우스를 두면 본인이 아니고 자식요소가 이렇게 변해라 */
+  width: 600px;
+}
+
+#graph:hover > .bar:nth-child(1) {
+  width: 300px;
+  background-color: red;
+  /* transition-delay: 0s;
+  transition-timing-function: linear; /*시간:변화=1:1, default=ease*/
+}
+
+#graph:hover > .bar:nth-child(2) {
+  width: 400px;
+  background-color: yellow;
+  /* transition-delay: 0.5s;
+  transition-timing-function: ease-in; */
+}
+
+#graph:hover > .bar:nth-child(3) {
+  width: 200px;
+  background-color: green;
+  /* transition-delay: 1s;
+  transition-timing-function: ease-in-out; */
+}
+
+#graph:hover > .bar:nth-child(4) {
+  width: 300px;
+  background-color: blue;
+  /* transition-delay: 1.5s;
+  transition-timing-function: ease-in; */
+}
+
+#graph:hover > .bar:nth-child(5) {
+  width: 500px;
+  background-color: purple;
+  /* transition-delay: 2s;
+  transition-timing-function: ease-in; */
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+html, body { height: 100%; } /*뷰포트 들어가있으니까*/
+
+#container {
+  display: inline-block;
+  width: 100vmin;
+  /* 브라우저는 min이 세로임*/
+  height: 100vmin;
+
+  /* width: 100vmax; */
+  /* height: 100vmax; */
+  /* max를 주면 가로길이를 기준으로 하기 떄문에 스크롤이 생김
+  가로로 스크롤이 생기는건 세로스크롤이 생겨서 그공간만큼 스크롤 생김 */
+  background: skyblue;
+}
