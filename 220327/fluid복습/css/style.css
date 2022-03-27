@@ -3,16 +3,13 @@
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
-  color: #666666;
-  /* 레이아웃이 깨지지 않고 컨텐츠가 유지되는게 이 이상줄어들게 하지 않겠다
-  760px보다 작게 줄어들면 더 안줄어들고 가로 스크롤이 생긴다.*/
+  color: #666;
   min-width: 760px;
 }
 
-a { color : #666666; }
-/* 앵커태그 기본적으로 파란색인데 그걸 컬러 바꿔줌 */
+a { color: #666; }
 
-/* header Layout */
+/* header */
 #main-header {
   height: 60px;
   line-height: 60px;
@@ -25,47 +22,40 @@ a { color : #666666; }
   color: white;
 }
 
-/* main gnb */
+/* gnb영역 */
 #main-gnb {
   overflow: hidden;
-  /* float하기위해 overflow해준다 */
   border-bottom: 1px solid black;
-  background: #32394a;
+  background-color: #32394a;
 }
-/* padding: 10px 20px; */
 
 #main-gnb ul {
-/*= #main-gnb ul.left, #main-gnb ul.right (여기서는 경로가 하나니까 ul생략가능)*/
   overflow: hidden;
 }
 
 #main-gnb > ul.left {
-  /* >(자식선택자)이렇게 쓰면 gnb바로 밑에 있는 ul만 해당  */
   float: left;
 }
 
 #main-gnb > ul.right {
   float: right;
 }
-
 #main-gnb > ul.left > li {
-  /* 불필요한 코드 제거 = #main-gnb ul li { } */
   float: left;
 }
 
-
 #main-gnb > ul.right > li {
-  float: right;
+  float: left;
 }
 
 #main-gnb a {
   display: block;
   padding: 10px 20px;
   color: white;
-  font-weight: bold; /*700*/
+  font-weight: bold;
 }
 
-/* 컨텐츠 영역 */
+/* 컨텐츠영역 */
 #wrap {
   overflow: hidden;
   background: #71b1d1;
@@ -77,9 +67,8 @@ a { color : #666666; }
 }
 
 #wrap #content-wrap {
-  float: left ;
+  float: left;
   width: calc( 100% - 200px );
-  /* width에서 200px을 줬기 때문에 100%에서 200px만큼 뺴줌 */
 }
 
 #main-lnb > ul > li > a {
@@ -92,15 +81,12 @@ a { color : #666666; }
 }
 
 #content {
-  /* 이렇게 나눠서하면 패딩하면 안쪽으로 딱 들어와서 편함
-  content-wrap에서 설정한 크기가 있기때문에 블럭단위로 움직임 */
-  background:white;
+  background: white;
   padding: 30px;
 }
 
-/* 하단영역 */
 #main-footer {
   padding: 10px;
   border-top: 3px solid black;
-  text-align: center;  /* 텍스트 가운데정렬 */
+  text-align: center;
 }
