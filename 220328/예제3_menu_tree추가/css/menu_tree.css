@@ -1,0 +1,97 @@
+@charset "UTF-8";
+.menu-tree-management {
+  border: 1px solid #f1f1f1;
+  display: inline-block; /*컨텐츠영역에 맞게 , blovk으로 하면 가로를 다 차지해버림.*/
+  box-sizing: border-box;
+  padding: 30px;
+  background: #f9f9f9;
+}
+
+.menu-tree-management .title {
+  font-size: 16px;/*body, html default 폰트 사이즈*/
+  font-weight: bold; /*700px, normal=400px*/
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+
+.menu-tree-management input[type=checkbox] {
+  display: none;
+}
+
+.menu-tree-management input[type=checkbox] + label {
+  position: relative; /*체크박스 자리에 이미지 넣을거라*/
+  display: inline-block;
+  padding-left: 30px;
+  font-size: 19px;
+  color: #333333;
+  height: 19px;
+  line-height: 19px;
+}
+
+.menu-tree-management input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  width: 19px; /*이미지크기와 동일*/
+  height: 19px;
+  top: 0;
+  left: 0;
+  background-image: url('../img/menu_tree_icon_plus.png'); /* 체크박스자리에 메뉴 이미지 삽입 */
+}
+
+/* 방법2 */
+/* .menu-tree-management input[type=checkbox]:checked + label:before {
+  background-image: url('../메뉴트리/menu_tree_icon_minus.png');
+} */
+
+/* 방법1 */
+/* after는 무조건 before보다 상위요소가 된다 */
+.menu-tree-management input[type=checkbox]:checked + label:after {
+  content: '';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 0;
+  left: 0;
+  background-image: url('../img/menu_tree_icon_minus.png');
+}
+
+/* 메뉴체크 시 하위메뉴 보이게 하기 */
+.menu-tree-management input[type=checkbox] + label ~ .sub-menu { /*= label ~ * = 뒤에 오는 모든 요소*/
+  display: none;
+}
+
+.menu-tree-management input[type=checkbox]:checked + label ~ * {
+  display: block;
+}
+
+/* 메뉴체크 시 색상 변경 */
+.menu-tree-management input[type=checkbox]:checked + label {
+  color: #1a73c4;
+}
+
+.menu-tree-management .table-ctn .menu-tree > ul > li {
+  /* 대분류끼리 공간만들기 */
+  margin-bottom: 30px;
+}
+
+.menu-tree-management .table-ctn .menu-tree .sub-menu {
+  margin-left: 30px;
+  margin-top: 25px;
+}
+
+.menu-tree-management .table-ctn .menu-tree .sub-menu > li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 18px; /*서브메뉴간 간격*/
+  font-size: 14px;
+  color: #666666;
+}
+
+.menu-tree-management .table-ctn .menu-tree .sub-menu > li:before {
+  content: 'L ';
+  position: absolute; /*포지션 안잡아주면 +18px돼서 위치가 다름*/
+  top: 0;
+  left: 0;
+  background-image: url();
+}

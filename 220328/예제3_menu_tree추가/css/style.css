@@ -1,0 +1,126 @@
+@charset "UTF-8";
+#wrap {
+  width: 1200px;
+  /* min-width: 800px; 미디어쿼리 대신 이렇게 작업해도 된다. */
+  margin: 0 auto;
+  /* background: skyblue; */
+}
+
+#lnb {
+  position: fixed;
+  padding: 20px;
+  width: 300px;
+  height: 100vh;
+  box-sizing: border-box;
+  background: #9fcad4;
+  /* background: rgba(0, 0, 0, .5 ); /*bar뒤에 컨텐츠 영역 있는거 확인 가능*/
+  z-index: 300;
+}
+
+#lnb h1 {
+  margin-bottom: 20px;
+}
+
+#lnb h1 a {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+/* menu_tree style제거 */
+/* 배경, 테투리 삭제 */
+#lnb .menu-tree-management {
+  background: none;
+  /*background: none; background-color: transparnt; */
+  border: none;
+}
+
+/* 텍스트 white로 변경 */
+.menu-tree-management .title {
+  color: white;
+}
+
+.menu-tree-management input[type=checkbox] + label {
+  color: white;
+}
+
+/* #lnb .menu-tree-management input[type=checkbox] + label {
+  color: white;
+} 이렇게 하면 checked하든말든 다 white가 됨. id가 우선순위 높기 때문에 */
+
+/* #lnb .menu-tree-management .sub-menu li {
+  color: white; 앞에 #lnb 아이디 줘서 에러난듯
+} */
+
+.menu-tree-management .table-ctn .menu-tree .sub-menu > li {
+  color: white;
+}
+/* 서브메뉴 마우스닿으면 색 변경 */
+.menu-tree-management .table-ctn .menu-tree .sub-menu > li:hover {
+  color: #1a73c4;
+}
+
+
+#container {
+  padding-left: 300px; /*안넣으면 lnb뒤에 들어가버림*/
+  width: 100%;
+  min-height: 100vh; /*height: 100vh;이거만 하면 나중에 컨텐츠 추가시 늘어나지 않음*/
+  box-sizing: border-box;
+}
+
+#top-menu {
+  height: 50px;
+  overflow: hidden;
+  padding: 0 10px;
+  box-sizing: border-box;
+  background: #f1f1f1;
+}
+
+/* 상단 메뉴바 */
+#top-menu ul {
+  overflow: hidden;
+  float: right;
+}
+
+#top-menu ul li {
+  float: left;
+  margin-left: 10px; /*메뉴 간 간격*/
+}
+
+#top-menu ul li:first-child {
+  margin-left: 0;
+}
+
+#top-menu ul li a {
+  line-height: 50px;
+}
+
+/* 컨텐츠 영역 */
+.contents {
+  padding: 50px;
+  box-sizing: border-box; /*위에 너비랑 줬어서 이거 해줘야함*/
+}
+
+.contents h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 1200px이하로 줄이면 컨텐츠가 밑으로 떨어지면서 한페이지에 다 나오게 하는거 */
+@media screen and ( max-width: 1200px ) {
+  #wrap {
+    width: 100%;
+  }
+}
+/* 500px부터는 안줄어들고 밑에 스크롤바 생기게 */
+@media screen and ( max-width: 800px ) {
+  #wrap {
+    width: 800px; /*0~800px까지는 800px로 고정*/
+  }
+}
+
+footer {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background: #f1f1f1;
+}

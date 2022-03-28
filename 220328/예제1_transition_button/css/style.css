@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+h2 {
+  margin: 30px 0;
+  color: #333333;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: #666666;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0 0 5px;
+  color: #666666;
+}
+
+#wrap {
+  display: inline-block;
+  width: 100%;
+  min-height: 100vh; /*컨텐츠를 더 추가했을때 이어져서 쭉 나옴 그냥heightㄴㄴ*/
+  text-align: center;
+  /* background: linear-gradient( 70deg,  #42f5dd, #f542b3 ); */
+  background: rgb(185,149,17);
+background: -webkit-linear-gradient(left, rgba(185,149,17,1) 25%, rgba(189,187,71,1) 36%, rgba(1,177,219,1) 59%, rgba(5,68,79,1) 100%);
+background: -o-linear-gradient(left, rgba(185,149,17,1) 25%, rgba(189,187,71,1) 36%, rgba(1,177,219,1) 59%, rgba(5,68,79,1) 100%);
+background: linear-gradient(to right, rgba(185,149,17,1) 25%, rgba(189,187,71,1) 36%, rgba(1,177,219,1) 59%, rgba(5,68,79,1) 100%);
+/* 중간에 있는 퍼센트는 시작위치 */
+}
+
+.items {
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  /* background: red; */
+}
+
+.switch .slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* 이렇게 4개 주면 쫙 펼쳐져서 들어감. 아래 width, height 100%로 줘도 되는데 옆으로 밀려서 left,top=0도 줘야함 */
+  background: #f1f1f1;
+  box-shadow: inset 0px 0px 5px rgba(0,0,0.2); /*좌측상단 원점을 기준으로 (x축 y축 그림자번짐정도 색*/
+  /*box-shadow: {x축, y축, 퍼짐정도, 색상} inset:inner shadow*/
+  overflow: hidden; /* 그림자만드는게 넘쳐 튀어나가는게 없게 해주려면 잡아줘야함 */
+  transition: .5s; /*색 자연스럽게 변하게 */
+}
+
+/* 하얀색버튼 만들기 */
+.switch .slider:before {
+  content: '';
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  /* 34-26=8px 그리고 위아래 공백이 같아야 하니 위에서 4px만큼 띄어줌*/
+  top: 4px;
+  left: 4px;
+  background: white;
+  box-shadow: 0px 0px 5px rgba(0,0,0.2);
+  transition: .5s; /*버튼 움직이기*/
+}
+
+/* round type */
+.switch.round .slider {
+  border-radius: 17px; /*높이값 반지름*/
+}
+
+.switch.round.big .slider {
+  border-radius: 19px; /*big은 따로 값 줌*/
+}
+
+.switch.round .slider:before {
+  border-radius: 100%;
+}
+
+/* size type */
+/* big type */
+.switch.big {
+  width: 64px;
+  height: 38px;
+}
+.switch.big .slider:before {
+  width: 30px;
+  height: 30px;
+}
+
+/* medium type */
+.switch.medium { /*.switch.round.medium이라고 주면 rectangle일때는 안먹음*/
+  width: 56px; /*초기 사이즈에서 4px씩 줄임*/
+  height: 30px;
+}
+.switch.medium .slider:before {
+  width: 22px; /*26-4px*/
+  height: 22px;
+}
+
+/* small type */
+.switch.small {
+  width: 52px;
+  height: 26px;
+}
+.switch.small .slider:before {
+  width: 18px;
+  height: 18px;
+}
+
+/* minimi type */
+.switch.minimi {
+  width: 40px;
+  height: 14px;
+}
+.switch.minimi .slider:before {
+  width: 6px;
+  height: 6px;
+}
+
+/* color type */
+.switch.green > input:checked + .slider {
+  background: green;
+}
+
+.switch.red > input:checked + .slider {
+  background: red;
+}
+
+.switch.yellow > input:checked + .slider {
+  background: yellow;
+}
+
+/* switch button 작동 */
+.switch > input {
+  display: none;
+}
+
+.switch > input:checked + .slider {
+  background: #2196f3;
+}
+
+.switch > input:checked + .slider:before {
+  left: 30px; /* 30px주면 오른쪽에 4px알아서 남게 됨 */
+  /* left로 준 속성은 left로 똑같이 줘야함 right로 주면 인식이 안될 수 있다 */
+}
