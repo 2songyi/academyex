@@ -59,7 +59,7 @@ background: linear-gradient(to right, rgba(185,149,17,1) 25%, rgba(189,187,71,1)
 }
 
 /* 하얀색버튼 만들기 */
-.switch .slider:before {
+.switch .slider:before { /*가상요소 사용*/
   content: '';
   position: absolute;
   width: 26px;
@@ -140,11 +140,11 @@ background: linear-gradient(to right, rgba(185,149,17,1) 25%, rgba(189,187,71,1)
 }
 
 /* switch button 작동 */
-.switch > input {
+.switch > input { /*부모>자식*/
   display: none;
 }
 
-.switch > input:checked + .slider {
+.switch > input:checked + .slider { /*+형제요소 선택자*/
   background: #2196f3;
 }
 

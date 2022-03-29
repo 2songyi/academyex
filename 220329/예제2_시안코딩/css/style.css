@@ -1,0 +1,235 @@
+@charset "UTF-8";
+:root { /*최상위에 선언해주겠다. 어디서든 다 쓸 수 있음*/
+  --content-width: 1320px; /*100%하면 다름 이번예제는 1320고정으로*/
+ }
+
+/* 공통 ui */
+a.common-btn {
+  display: inline-block;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #0055b8;
+  /* margin-top: 40px; 여기서 넣으면 안됨 공통속성으로 만든거라 모든 버튼에 들어가게 돼서*/
+}
+
+/* 메인배너 */
+#mainbanner {
+  background-image: url('../img/main_banner_bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%; /*높이값만 100%*/
+}
+
+#mainbanner .inner {
+  position: relative; /*안쪽 텍스트를 absolute로 잡을거라*/
+  width: var(--content-width);
+  height: 100vh; /*첫화면이 브라우저를 꽉 채움*/
+  margin: 0 auto;
+  /* background: rgba( 0, 0, 0, 0.5); */
+
+}
+
+#mainbanner .maintext {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  min-height: 254px;
+  /* 원래 높이값을 가져와서 계산했는데 변동가능성이 있어서 transform 사용 */
+  top: calc( 50% - 207px );
+  /* 100vh의 절반에 위치하게 한 다음 위로 207만큼 댕겨올림 */
+}
+
+/*메인배너 메인타이틀 */
+#mainbanner .maintext p.maintitle {
+  line-height: 60px;
+  font-size: 50px;
+  color: #333333;
+}
+/* 메인배너 서브타이틀 */
+#mainbanner .maintext p.subtitle {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #666666;
+}
+
+#mainbanner .maintext a.common-btn {
+  margin-top: 40px;
+}
+
+/* 컨텐츠영역 */
+#wrap {
+  width: var(--content-width);
+  margin: 0 auto;
+  background: #f1f1f1;
+}
+
+/* 상단고정형 메뉴 */
+#header {
+  position: fixed; /*위에 고정할거기 때문에*/
+  width: var(--content-width);
+  top: 0;
+  overflow: hidden;
+  /* background: skyblue; */
+  padding: 45px 25px 0;
+  box-sizing: border-box;
+}
+
+#logo { float: left; }
+
+#header .inner { float: right; }
+/* #header .inner #login-menu, .inner #gnb {
+  float: left;
+} */
+
+#header .inner #gnb {
+  margin-right: 103px;
+}
+
+#header .inner > ul {
+  overflow: hidden;
+  float: left;
+}
+
+#header .inner > ul > li {
+  float: left;
+  height: 20px;
+}
+
+#header .inner > ul > li > a {
+  line-height: 20px;
+}
+
+/* gnb메뉴간 간격 조정 */
+#header .inner #gnb li {
+  margin-left: 47px;
+}
+#header .inner #login-menu li {
+  margin-left: 47px;
+}
+#header .inner #gnb li:first-child, #header .inner #login-menu li:first-child {
+  margin-left: 0px;
+}
+
+/* 장바구니 숫자 스타일 */
+#header .inner #login-menu li span.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  float: right; /*안해주면 밑으로 떨어져서 안보임*/
+  font-size: 14px;
+  color: white;
+  background: #ffc01d;
+  margin-left: 4px;
+  border-radius: 100%;
+}
+
+/* 컨텐츠 영역 */
+#container section .inner {
+  width: var(--content-width);
+  min-height: 650px;
+  margin: 0 auto;
+  text-align: center;
+  /* font-size: 50px; */
+  /* color: white; */
+}
+
+/* 짝수번째(even) 컨텐츠 영역 blue / 홀수번째 (odd) green (구조선택자)*/
+/* #container section:nth-child(odd) .inner { background: green; }  */
+       /*inner에 구조선택자 주면 inner는 하나뿐이라 안먹힘*/
+/* #container section:nth-child(even) .inner { background: blue; } */
+
+#container section:nth-child(1) {
+  padding-top: 165px;
+  box-sizing: border-box; /*안해주면 165가 더해져서 높아짐*/
+}
+
+#container section:nth-child(2) { background: #f9f9f9; }
+
+#container section:nth-child(2) .inner {
+  min-height: 652px;
+  padding-top: 146px;
+  box-sizing: border-box; /* 안하면 652+146됨 */
+ }
+
+#container section:nth-child(4) { background: #f4f4f4; }
+#container section:nth-child(5) { background: #1d314a; }
+
+/* 첫번째 섹션 */
+
+/* #container #first { overflow: hidden; }
+#container #first .box-wrap {
+  float: left;
+  overflow: hidden;
+}
+
+#container #first .box-wrap li {
+  float: left;
+  width: 25%;
+}
+
+#container #first .box-wrap li .items {
+  box-sizing: border-box;
+  border: 1px solid #e3e3e3;
+  margin: 0 10px 0;
+  padding: 10px;
+}
+
+#container #first .box-wrap li h3 {
+} */
+
+/* 첫번째섹션 강사님코드 */
+
+#container section .inner .box-wrap li {
+  float: left;
+  width: 25%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+#container section .inner .box-wrap li .items {
+  border: 1px solid #e3e3e3;
+  padding: 45px 0; /*위아래로 45px 그림밑에도 45px남아야해서*/
+  min-height: 270px;
+  box-sizing: border-box;
+}
+
+#container section .inner .box-wrap li .items h3 {
+  font-size: 20px;
+  line-height: 20px;
+  color: #252525;
+}
+#container section .inner .box-wrap li .items p {
+  margin-top: 30px;
+  padding: 0 50px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+}
+#container section .inner .box-wrap li .items img {
+  margin-top: 32px;
+  opacity: .8;  /* 아이콘 투명도 조절 */
+}
+
+/* 두번째 섹션 */
+#container #second .inner{
+  top: calc( 50% );
+}
+
+#container #second .inner h2 {
+  font-size: 45px;
+  line-height: 1;
+  color: #333333;
+}
+
+#container #second .inner .subtitle {
+  margin-top: 21px; /*line-height에 값이 들어가서 27대신 21*/
+  font-size: 24px;
+  line-height: 36px;
+  color: #666666;
+}
