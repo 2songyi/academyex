@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <title>시안코딩</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable-no">
+  <!-- <link rel="stylesheet" href="./css/initial.css"> -->
+  <link rel="stylesheet" href="./css/initial.min.css">
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- 메인페이지와 아래 사진은 wrap영역을 벗어나있어서 따로 영역을 잡아줘야한다 -->
+  <!-- 메인배너 -->
+  <div id="mainbanner">
+    <div class="inner">
+      <div class="maintext">
+        <p class="maintitle">정직한 가격의<br><strong>프리미엄 면도용품 구독 서비스</strong></p>
+        <p class="subtitle">독일산 5중날 8,900원, 첫 가입 시 면도기를 드려요</p>
+        <a href="#" class="common-btn">더 알아보기</a>
+
+      </div>
+    </div>
+  </div>
+  <!-- 헤더영역 -->
+  <div id="wrap">
+    <header id="header">
+      <div class="h-inner">
+      <div id="logo">
+        <h1><a href="#"><img src="./img/logo_img.png" alt=""></a></h1>
+      </div>
+      <div class="inner"><!-- gnb와 로그인로그아웃 두 그룹을 float해주기 위해 inner로묶음 -->
+        <ul id="gnb">
+          <li><a href="#first">시작하기</a></li>
+          <li><a href="#second">상품보기</a></li>
+          <li><a href="#third">와이즐리 이야기</a></li>
+          <li><a href="#fourth">고객센터</a></li>
+        </ul>
+        <ul id="login-menu">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#" class="cart">장바구니<span class="count">0</span></a></li> <!-- 장바구니옆에 디자인을 넣기위해 클래스 넣음 -->
+        </ul>
+      </div>
+      </div>
+    </header>
+  </div>
+  <!-- 컨텐츠 영역 -->
+  <div id="container">
+    <!-- 첫번째 섹션 -->
+    <section id="first">
+      <div class="inner">
+        <ul class="box-wrap">
+          <li>
+            <div class="items">
+              <h3>채용정보</h3>
+              <p>21세기 선두육상여객 운송 금호고속 인재모집</p>
+              <div class="img">
+                <img src="./img/section_icon.png" alt="section_icon">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <h3>배송안내</h3>
+              <p>21세기 선두육상여객 운송 금호고속 인재모집</p>
+              <div class="img">
+                <img src="./img/section1_icons/delivery-truck.png" style=width:54px; alt="section_icon">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <h3>교환환불</h3>
+              <p>21세기 선두육상여객 운송 금호고속 인재모집</p>
+              <div class="img">
+                <img src="./img/section1_icons/box.png" style=width:54px; alt="section_icon">
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="items">
+              <h3>자주하는 질문</h3>
+              <p>21세기 선두육상여객 운송 금호고속 인재모집</p>
+              <div class="img">
+                <img src="./img/section1_icons/ask.png" style=width:54px; alt="section_icon">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- 두번째 섹션 -->
+    <section id="second">
+      <div class="inner">
+        <h2>다양한 기초자산</h2>
+        <div class="subtitle">KOSPI200지수, KOSDAQ150지수 및 55개의 구성종목에<br>투자할 수 있습니다.</div>
+        <div class="thumb-img-wrap">
+          <!-- ul>li*6>a[href=#]>img[src=./img/section_2/img0$.png][alt=img0$] -->
+          <ul>
+            <li><a href="#"><img src="./img/section_2/img01.png" alt="img01"></a></li>
+            <li><a href="#"><img src="./img/section_2/img02.png" alt="img02"></a></li>
+            <li><a href="#"><img src="./img/section_2/img03.png" alt="img03"></a></li>
+            <li><a href="#"><img src="./img/section_2/img04.png" alt="img04"></a></li>
+            <li><a href="#"><img src="./img/section_2/img05.png" alt="img05"></a></li>
+            <li><a href="#"><img src="./img/section_2/img06.png" alt="img06"></a></li>
+          </ul>
+          <ul>
+            <li><a href="#"><img src="./img/section_2/img07.png" alt="img07"></a></li>
+            <li><a href="#"><img src="./img/section_2/img08.png" alt="img08"></a></li>
+            <li><a href="#"><img src="./img/section_2/img09.png" alt="img09"></a></li>
+            <li><a href="#"><img src="./img/section_2/img10.png" alt="img10"></a></li>
+            <li><a href="#"><img src="./img/section_2/img11.png" alt="img11"></a></li>
+            <li><a href="#"><img src="./img/section_2/img12.png" alt="img12"></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- 세번째 섹션 -->
+    <section id="third">
+      <div class="inner">
+        <!-- 반으로 나뉘는 영역이라 박스로 공통속성 주기 위해 box두개 생성 -->
+        <div class="box img"></div> <!-- 이미지 영역 -->
+        <div class="box"> <!-- 텍스트 영역 -->
+          <div class="text-box">
+            <h2>상승일 때도, 하락일 때도<br>모두 수익!</h2>
+            <div class="subtitle">상승을 예상할 때는 콜ELW,<br>하락을 예상할 때는 풋ELW와 함께하세요.</div>
+            <a href="#" class="common-btn">ELW 장점</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 네번째 섹션 -->
+    <section id="fourth">
+      <div class="inner">
+        <div class="box">
+          <div class="text-box">
+            <h2>새로운 면도 경험<span class="light-text">을<br>선물하세요<span></h2>
+            <div class="subtitle">건강한 면도 습관을 선물하세요.<br>3단계프리미엄</div>
+            <a href="#" class="common-btn">더 알아보기</a>
+          </div>
+        </div>
+        <div class="box img"></div>
+      </div>
+    </section>
+    <!-- 다섯번째 섹션 -->
+    <section id="fifth">
+      <div class="inner">
+          <div class="box img"></div> <!-- 이미지 영역 -->
+          <div class="box"> <!-- 텍스트 영역 -->
+            <div class="text-box">
+              <h2><span class="light-text">부담없이 시작하세요.</span><br>클럽 구독 시 면도기 무료</h2>
+              <a href="#" class="common-btn">시작하기</a>
+            </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- footer영역 -->
+  <footer id="footer">
+    <div class="inner">
+      <div class="f-box logo">
+        <a href="#"><img src="./img/footer_logo.png" alt="wisely"></a>
+      </div>
+      <div class="f-box">
+        <ul>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용약관 및 고객유의 사항</a></li>
+        </ul>
+        <div class="tel">고객센터&nbsp;<a href="tel:1544-5000">1544-5000</a></div>
+        <div class="copyright">COPYRIGHT&nbsp;2020&nbsp;KOREA&nbsp;INVESTMENT&nbsp;&&nbsp;SECUTITIES&nbsp;CO.&nbsp;LTD<br>ALL&nbsp;RIGHT&nbsp;RESERVED</div>
+      </div>
+      <select name="familysite" id="familysite">
+        <option value="" selected disabled hidden >Family Site</option>
+        <option value="daum">daum</option>
+        <option value="naver">naver</option>
+        <option value="kakao">kakao</option>
+        <option value="instagram">instagram</option>
+      </select>
+    </div>
+  </footer>
+</body>
+
+</html>
