@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.bouncingball {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  margin: 50px;
+  background: skyblue;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in; /*가속도 붙어서 속도가 빨라짐*/
+  }
+  50% { /*공이 바닥에 닿았을때 속도가 느려지는 구간*/
+    top: 140px;
+    animation-timing-function: ease-out; /*속도 점점 느려짐*/
+  }
+  55% { /*찌그러지기 시작*/
+    top: 160px;
+    height: 120px; /*눌리면서 공 높이 낮아짐*/
+    animation-timing-function: ease-in;
+  }
+  65% {
+    top: 120px;
+    height: 140px; /*공이 원래 모양으로 돌아옴*/
+    animation-timing-function: ease-out;
+  }
+  100% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+
+.box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  border: 1px solid black;
+  animation-name: bgcolorchange;
+  animation-duration: 2s;
+  animation-timing-function: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* animation-timing-function: linear; */
+}
+
+.box:nth-child(2) {
+  animation-name: bgcolorchange2;
+  top: 100px;
+  animation-direction: alternate;
+}
+
+@keyframes bgcolorchange {
+0% {
+  background: red;
+  left:0;
+}
+50% {
+  background: yellow;
+  left: 250px;
+}
+100% {
+  background: red;
+  left: 0;
+  }
+}
+
+/* 두번째 박스는 중간 체크포인트 없이 위 박스랑 같이 움직이기 */
+@keyframes bgcolorchange2 {
+0% {
+  background: red;
+  left:0;
+}
+/* 50% {
+  background: yellow;
+  left: 250px;
+} */
+100% {
+  background: yellow;
+  left: 250px;
+  }
+}

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+.box {
+  position: absolute;
+  display: flex; /*가운데 정렬*/
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  left: 0;
+  border: 1px solid black;
+  border-radius: 100%; /*50%해도 원됨*/
+  box-sizing: border-box;
+  background: skyblue;
+  color: white;
+  /* animation */
+  /*animation-name: rotate; class정하는것처럼 임의로 정하는 이름*/
+  animation-duration: 2s; /*몇초동안*/
+  animation-iteration-count: infinite; /*몇번할건지*/
+  animation-direction: alternate; /*방향 alternate:갔다가 다시 돌아옴*/
+  animation-timing-function: linear; /*linear 색변화도 자연스러워짐*/
+}
+
+.box:nth-child(1) {
+  animation-name: rotate1;
+}
+
+.box:nth-child(2) {
+  animation-name: rotate2;
+  top: 100px;
+}
+.box:nth-child(3) {
+  animation-name: rotate3;
+  top: 200px;
+}
+
+.box h1 {
+  font-size: 14px;
+}
+
+
+@keyframes rotate1 {
+  /* 각각의 프레임에 브레이크다임을 줘야하는데 */
+  /* 시작과 끝을 키워드로 from~to(시작과 끝만할때) or 0%~100%수치로 넣기때문에 세부적으로 넣기 가능*/
+  from {
+    /* 변화코드 입력 영역 */
+    left: 0;
+    background: skyblue;
+  }
+
+  50% {
+    /* 변화 코드 입력 영역 */
+    background: blue;
+
+  }
+  to {
+    /* 변화 코드 입력 영역 */
+    left: calc(100% - 100px); /*좌측상단에 중심점 있어서 너비만큼 빼줌 그러면 벽에 붙었다가 돌아옴*/
+    background: purple;
+    transform: rotate(90deg); /*회전*/
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    left: 0;
+    top: 100px;
+    background: blue;
+  }
+
+  50% {
+    background: skyblue;
+
+  }
+  to {
+    left: 400px;
+    background: grey;
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transform: rotate(180deg); /*회전*/
+  }
+}
+
+@keyframes rotate3 {
+  from {
+    left: 0;
+    top:200px;
+
+    background: white;
+  }
+
+  50% {
+    background: grey;
+
+  }
+  to {
+    top: calc(100% - 100px);
+    background: black;
+      transform: rotate(360deg); /*회전*/
+  }
+}
