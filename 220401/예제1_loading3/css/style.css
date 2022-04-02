@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body { background: black; }
+
+/* 스피너 애니메이션 설정 */
+@keyframes spinner {
+  from{
+    transform: rotate( 0deg );
+  }
+  to{
+    transform: rotate( 360deg );
+  }
+}
+
+/* 로딩글자 애니메이션 */
+@keyframes textAni {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+#wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#spinner {
+  position: relative;
+  display: flex; /*스피너 안에 로딩이 가운데오게 이거도 센터정렬*/
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  width: 60px;
+  height: 60px;
+  /* line-height: 60px; 위에 flex대신 line-height줘도 정렬됨
+  text-align: center; 도 해주면 텍스트도 가운데로 */
+  /* background: skyblue; */
+}
+
+#spinner p {
+  font-size: 12px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+  z-index: 500;
+  animation-name: textAni;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+
+/* 로딩스피너 만들기 */
+#spinner div { /*공통요소*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba( 110, 240, 50, .3);
+  border-top-color: rgba( 110, 240, 50, 1); /*위에만 색이 밝게 됨*/
+  border-radius: 100%;
+  animation-name: spinner;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#spinner div:nth-of-type(1) {
+  width: 120%;
+  height: 120%;
+  animation-delay: 1s;
+}
+#spinner div:nth-of-type(2) { /*100%짜리 원*/
+  animation-delay: 0.5s;
+}
+#spinner div:nth-of-type(3) {
+  width: 80%;
+  height: 80%;
+} /*스케일로 퍼센트줘서 배치할 수 있지만 이렇게 배치도 가능*/

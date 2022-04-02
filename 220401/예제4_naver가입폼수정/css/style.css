@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+#wrap {
+  min-width: 1072px;
+  min-height: 1213px;
+  background: #f5f6f7;
+  margin: 0 auto;
+}
+
+#wrap .title {
+  padding: 60px 0 20px;
+  text-align: center;
+}
+
+/* 테이블 label h3속성 */
+#wrap h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 19px 0 8px;
+}
+
+/* 테이블 style */
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table tr td {
+  position: relative;
+}
+
+/* input박스 style */
+input {
+  /* padding: 1px 2px; */
+  display: inline-block;
+  border: 1px solid #dadada;
+  height: 51px;
+}
+
+input.big {
+  width: 460px;
+}
+
+input.midium {
+  width: 335px;
+}
+
+input.small {
+  width:146.7px;
+}
+
+.input-group  {
+  /*3등분 어케하지..*/
+}
+
+/* select box style */
+/* select박스 공통 속성 */
+select {
+  height: 51px;
+}
+
+select.big {
+  width: 460px;
+}
+select.small {
+  width: 146.7px;
+}
+
+/* button style */
+button {
+  background-color: #03c75a;
+
+}
+button.small {
+  height: 51px;
+  width:115px;
+}
+button.big{
+  height: 53px;
+  width: 460px;
+}
