@@ -45,24 +45,33 @@
             <h3><label for="year">생년월일</label></h3>
             <!-- .input-group -->
             <div class="input-group">
-              <input type="text" class="small" id="year" name="year" maxlength="4" size="10" placeholder="년(4년)">
-              <select class="small" id="month" name="month">
-                <!-- option[value=$]*12>{$} -->
-                <option value="월">월</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-              </select>
-              <input type="text" class="small" id="date" name="date" maxlength="2" size="10">
+              <!-- ul li를 추가해서 float해줌 -->
+              <ul>
+                <li>
+                  <input type="text" class="one small" id="year" name="year" maxlength="4" size="10" placeholder="년(4년)">
+                </li>
+                <li>
+                  <select class="two small" id="month" name="month">
+                    <!-- option[value=$]*12>{$} -->
+                    <option value="월">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </li>
+                <li>
+                  <input type="text" class="three small" id="date" name="date" maxlength="2" size="10">
+                </li>
+              </ul>
             </div>
           </td>
         </tr>
@@ -92,6 +101,7 @@
             <h3>
               <label for="tel">휴대전화</label>
             </h3>
+            <div class="tel">
               <ul>
                 <li>
                   <select class="big" id="local-number" name="local-number">
@@ -104,16 +114,20 @@
               </li>
                 <li>
                     <input type="tel" class="midium" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="전화번호 입력">
-                    <button type="button">인증번호 받기</button>
+                    <button type="button" class="small">인증번호 받기</button>
                 </li>
                 <li>
                   <input type="text" class="big" id="auth-num" name="auth-num" maxlength="4" placeholder="인증번호를 입력하세요." disabled>
                 </li>
               </ul>
+              </div>
           </td>
         </tr>
       </table>
-      <button type="submit">가입하기</button>
+      <!-- 가입버튼도 가운데 정렬 해주기 위해서 따로 클래스 뺌 -->
+      <div class="joinbtn">
+        <button type="submit" class="big">가입하기</button>
+      </div>
     </form>
   </div>
     <footer>
@@ -129,3 +143,4 @@
     </footer>
   </body>
 </html>
+>>>>>>> Stashed changes

@@ -2,37 +2,54 @@
 <html lang="ko" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="veiwport" content="width=width-device, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>회원가입 step1</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/style1.css">
   </head>
   <body>
+    <div id="wrap">
     <h1>NAVER</h1>
     <form>
       <article>
         <dl>
-          <dt><input type="checkbox" name="ch1"><span>네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.</span></dt>
+          <dt>
+            <input type="checkbox" class="ck" name="ch1">
+            <label for="ck"></label>
+            <span>네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.</span></dt>
         </dl>
       </article>
       <article>
         <dl>
-          <dt><input type="checkbox" name="ch2"><span>네이버 이용약관 동의</span><span class="check-item">(필수)</span></dt>
+          <dt>
+            <input type="checkbox" class="ck" name="ch2">
+            <label for="ck"></label>
+            <span>네이버 이용약관 동의</span><span class="check-item">(필수)</span></dt>
           <dd>이용약관 ...</dd>
         </dl>
       </article>
       <article>
         <dl>
-          <dt><input type="checkbox" name="ch2"><span>개인정보 수집 및 이용 동의</span><span class="check-item">(선택)</span><a href="#">어린이용 안내</a></dt>
+          <dt><input type="checkbox" class="ck" name="ch2">
+            <label for="ck"></label>
+            <span>개인정보 수집 및 이용 동의</span><span class="check-item">(선택)</span><a href="#">어린이용 안내</a></dt>
           <dd>이용약관 ...</dd>
         </dl>
       </article>
       <article>
         <dl>
-          <dt><input type="checkbox" name="ch2"><span>위치정보 이용약관 동의</span><span class="check-item">(선택)</span></dt>
+          <dt><input type="checkbox" class="ck" name="ch2">
+            <label for="ck"></label>
+            <span>위치정보 이용약관 동의</span><span class="check-item">(선택)</span></dt>
           <dd>이용약관 ...</dd>
         </dl>
       </article>
       <article>
         <dl>
-          <dt><input type="checkbox" name="ch2"><span>프로모션 정보 수신 동의</span><span class="check-item">(선택)</span></dt>
+          <dt><input type="checkbox" class="ck" name="ch2">
+            <label for="ck"></label>
+            <span>프로모션 정보 수신 동의</span><span class="check-item">(선택)</span></dt>
           <dd>이용약관 ...</dd>
         </dl>
       </article>
@@ -41,6 +58,7 @@
         <button type="submit">확인</button>
       </div>
     </form>
+    </div>
     <footer>
       <p>회사, 동아리 등 단체에서 사용할 ID가 필요하세요?<br><a href="">단체 회원 가입</a></p>
       <!-- <ul>
