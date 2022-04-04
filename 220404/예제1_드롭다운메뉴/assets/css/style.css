@@ -1,0 +1,257 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.4rem;
+}
+
+/* 햄버거 버튼 만들기 */
+input[type="checkbox"]#gnbcheck {
+  display: none;
+}
+
+#gnbbtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background: red; */
+  width: 32px;
+  height: 32px;
+  z-index: 800;
+  display: none;
+}
+
+#gnbbtn > span {
+  position: absolute;
+  top: 16px;
+  height: 1.6px;
+  width: 100%;
+  transform: translateY(-50%);
+  background: #fff; /*햄버거 부분 오른쪽으로 옮기기고 거운데 선 만들기*/
+}
+
+#gnbbtn > span:nth-child(1) {
+  top: 8px;
+}
+#gnbbtn > span:nth-child(3) {
+  top: 24px;
+}
+
+
+/* 전체 레이아웃 */
+.wrap {
+  position: relative;
+  width: 100rem;  /* 폰트가 10px이니까 100rem=1000px */
+  min-width: 230px;
+  margin: 0 auto;
+  /* background: grey; */
+}
+
+/* 상단영역 */
+.header {
+  position: relative;
+  height: 10rem;
+  background: skyblue;
+}
+
+.logo {
+  position: absolute;
+  display: block;
+  width: 15rem;
+  height: 10rem;
+  left: 0;
+  top: 0;
+  color: #fff;
+  line-height: 10rem;
+  text-align: center;
+  background: #000000;
+  text-transform: uppercase;
+}
+
+.logo:hover {
+  color: yellow;
+}
+
+/* 메인메뉴 */
+.gnb {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  z-index: 500; /*안주면 메인영역에 가림*/
+}
+
+.mainmenu {
+  position: relative; /*서브메뉴때매*/
+  width: 80rem;
+  height: 6rem;
+  background: #000;
+  /* overflow: hidden; */
+  /* 해주면 submenu가림 */
+}
+
+.mainmenu > li {
+  position: relative;
+  width: 25%;
+  float: left;
+}
+.mainmenu > li > a { /*바로밑에 있는거라고 찝어줘야한 아니면 밑에 있는거 다 선택됨 */
+  position: relative;
+  display: block;
+  color: white;
+  font-size: 1.6rem;
+  line-height: 6rem;
+  text-align: center;
+  text-transform: uppercase; /*대문자*/
+  transition: background .5s; /*hover자연스럽게*/
+}
+
+.mainmenu > li:hover > a { /*메뉴바 위에 마우스 댔을때*/
+  background: #f00f00;
+}
+
+.mainmenu > li:hover > .submenu { /*대분류에 마우스 올렸을때 sub보이게*/
+  display: block;
+  animation-name: submenudrop;
+  animation-duration: .5s;
+  transform-origin: top;
+}
+
+.mainmenu:hover > li > .submenu { /*모든 서브메뉴가 동시에 나오게*/
+  /* = .gnb:hover .submenu  */
+  /* display: block; */
+}
+
+/* submenu drop animation */
+@keyframes submenudrop {
+  from { transform: scaleY(0); opacity:0; }
+  to { transform: scaleY(1); opacity:1; }
+}
+
+.submenu {
+  position: relative;
+  background: #000000;
+  display: none; /*hover에만 보이게 하려고*/
+
+}
+
+.submenu a {
+  display: block;
+  line-height: 4rem;
+  text-align: center;
+  color: white;
+  text-transform: capitalize;
+  transition: background .5s;
+}
+
+.submenu li a:hover {
+  background: #f00f00;
+}
+
+/* 메인영역 */
+.main {
+  position: relative;
+}
+
+.slide {
+  position: relative; /*display는 이미 block*/
+  height: 30rem; /*300*/
+  background: orange;
+}
+
+.board {
+  position: relative;
+  background: green;
+  overflow: hidden;
+}
+
+.board > div {
+  /* 공통부분빼줌 */
+  position: relative;
+  width: 33.333%;
+  height: 20rem;
+  float: left;
+}
+
+.notice {
+  background: rgba( 0, 0, 0, .5);
+}
+.gallery {
+    background: rgba( 0, 0, 0, .1);
+}
+.banner {
+    background: rgba( 0, 0, 0, .8);
+}
+
+/* 하단영역 */
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+.f-left {
+  position: relative;
+  width: 15%;
+  height: 10rem;
+  color: #ffffff;
+  float: left;
+  background: #000;
+}
+.f-right {
+  position: relative;
+  width: 85%;
+  height: 10rem;
+  float: left;
+  background: grey;
+}
+.f-menu {
+  position: relative; /*지금은 꼭 넣을 필요는 없음*/
+  height: 5rem;
+  background: rgba( 255, 255, 255, .5);
+}
+.f-copy {
+  position: relative;
+  height: 5rem;
+  background: rgba( 255, 255, 255, .7);
+}
+
+/* 반응형 코드 (모바일영역)*/
+@media all and ( max-width: 1200px ) {
+  .wrap { width: 100%; }
+}
+@media all and ( max-width: 1024px) { }
+
+@media all and ( max-width: 960px) {
+  /* 이때부터 모바일 햄버거 버튼 나타나게 */
+  #mobile-close-btn {
+    display: block;
+  }
+  #gnbbtn {
+    display: block; }
+
+  input[type=checkbox]#gnbcheck:checked ~ .header .gnb {
+    left: 0; /*체크되면 나타나게*/
+  }
+
+  .gnb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    left: -100%;
+    background: rgba( 0,0,0,.8);
+    transition: .5s ease-in-out;
+    z-index: 900;
+  }
+
+  .gnb ul.mainmenu { /*햄버거로 꺼낸 메뉴 스타일*/
+    padding-top: 50px;
+    width: 100%; /*float해제 요소와 같음*/
+    box-sizing: border-box;
+    padding-left: 0px;
+  }
+  .gnb ul.mainmenu li {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 0;
+  }
+}
