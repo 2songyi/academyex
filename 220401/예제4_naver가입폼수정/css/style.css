@@ -1,10 +1,17 @@
 @charset "UTF-8";
 
+body {
+  background: #f5f6f7;
+}
+
 #wrap {
-  min-width: 1072px;
-  min-height: 1213px;
+  max-width: 460px;
+  /* tabel에 flex를 넣지않고 여기에 min을 넣어줌 */
+  /* min-width: 4px; */
+  /* min-height: 1213px; */
   background: #f5f6f7;
   margin: 0 auto;
+
 }
 
 #wrap .title { /*1과동일*/
@@ -31,9 +38,11 @@ table {
   border-collapse: collapse;
   width: 100%;
   /* width: 460px; */
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* vertical-align: center;
+  text-align: center; */
 }
 
 table tr td {
@@ -50,6 +59,7 @@ input {
   padding: 10px 14px 10px 14px;
   overflow: hidden;
 }
+
 table tr:nth-of-type(1) input { padding-right: 110px; }
 table tr:nth-of-type(2) input { padding-right: 85px; }
 table tr:nth-of-type(3) input { padding-right: 85px; }
@@ -66,15 +76,22 @@ input.small {
   width:146.7px;
 }
 
+.input-group {
+  width: 100%;
+}
 .input-group ul li {
   float: left;
+  /* margin-left: 10px; */
   /* 생년월일 3등분 해주기 위해서 ul li만들었음 */
+  box-sizing: border-box;
 }
+
 
 /* input box눌렀을때 테두리 style */
 input:focus {
   outline: none;
   border: 1px solid  #03c75a;
+  box-sizing: border-box;
 }
 
 /* tel ul margin */
@@ -82,8 +99,8 @@ input:focus {
 .tel ul li:first-child { margin-top: 0; }
 
 /* input-group margin */
-.input-group .two { margin-left: 10px;}
-.input-group .three { margin-left: 10px;}
+/* .input-group .two { margin-left: 10px;} */
+/* .input-group .three { margin-left: 10px;} */
 
 /* select box style */
 /* select박스 공통 속성 */
@@ -117,6 +134,7 @@ button.small {
   height: 51px;
   width:115px;
   font-size: 15px;
+  /* right: 100%; */
 }
 
 .joinbtn { /*가입버튼 center정렬위해 클래스 따로 만들어줌*/
@@ -135,4 +153,18 @@ footer {
   background-color: #f5f6f7;
   text-align: center;
   font-weight: none;
+}
+
+/* 아이콘삽입 */
+table #pw {
+  background-image: url('../img/lock.png');
+  background-repeat: no-repeat;
+  background-position: calc( 100% - 10px ) center;
+
+}
+
+table #repw {
+  background-image: url('../img/open_lock.png');
+  background-repeat: no-repeat;
+  background-position: calc( 100% - 10px ) center;
 }
