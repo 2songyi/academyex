@@ -1,0 +1,44 @@
+/* 체크박스 하던거 */
+
+/* 체크박스 style */
+input[type=checkbox] {
+  /* display: none; */
+}
+input[type=checkbox] + label:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background: #f5f6f7;
+  background-image: url('../img/small_ck.png');
+  background-position:center;
+  background-size: 100%;
+}
+
+input[type=checkbox]:checked + label:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  background-image: url('../img/small_ck_green.png');
+  background-size: 100% 100%;
+}
+/* ------------ */
+/* input[type=checkbox] + label:before {
+  content: '';
+  position: absolute;
+  top:50%;
+  left: 1px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background: #f5f6f7 url('../img/small_ck.png');
+  background-size: 20px 20px;
+}
+input[type=checkbox]:checked + label:after {
+  content: '';
+  background: #f5f6f7 url('../img/small_ck_green.png');
+  background-size: 20px 20px;
+} */
+/* ------------- */

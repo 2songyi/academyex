@@ -8,8 +8,8 @@ title {
 #wrap {
   background: #f5f6f7;
   margin: 0 auto;
-  max-width: 768px;
-  min-width: 468px;
+  max-width: 460px;
+  min-height: 709px;
   /*이 최소값을 전체를 감싸는 곳에 넣어 주어야 한다.*/
 }
 
@@ -17,6 +17,36 @@ title {
   padding: 60px 0 20px;
   text-align: center;
   color: #03c75a;
+}
+
+/* 텍스트 밑줄 */
+.firstspan {
+  text-decoration: underline;
+}
+/* 스크롤 텍스트 박스 */
+.terms-box {
+  overflow: scroll;
+  width: 460px;
+  height: 88px;
+  background: white;
+  padding: 12px;
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 15px;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+  color: #666666;
+}
+.terms-box span {
+  font-weight: bold;
+}
+
+/* 마지막 약관동의 텍스트 style */
+.last-p {
+  font-size: 12px;
+  line-height: 14px;
+  padding-top: 10px;
+  color: #666666;
 }
 
 form {
@@ -28,40 +58,69 @@ form {
 }
 
 form dt {
-  padding-left: 34px;
   line-height: 21px;
 }
+
 /* 체크박스 style */
 input[type=checkbox] {
   /* display: none; */
-  /* background-color: green; */
 }
 
 input[type=checkbox] + label {
   position: relative;
   display: inline-block;
-  width: 21px;
-  height: 21px;
-  margin: 5px 0 0 12px;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  background: #f5f6f7;
   background-image: url('../img/small_ck.png');
   background-position:center;
-  background-size: 100% 100%;
+  background-size: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-input[type=checkbox]:checked + label:after {
+input[type=checkbox]:checked + label {
   content: '';
   position: absolute;
   display: inline-block;
   background-image: url('../img/small_ck_green.png');
-  background-position: center;
+  /* background-position: center; */
   background-size: 100% 100%;
-  background-color: red;
+}
+
+/* 첫번째 체크박스 큰 ver */
+input[type=checkbox].ck-big {
+  /* display: none; */
+}
+
+input[type=checkbox].ck-big + label {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  background: #f5f6f7;
+  background-image: url('../img/small_ck.png');
+  background-position:center;
+  background-size: 100%;
+  cursor: pointer;
+}
+
+input[type=checkbox].ck-big:checked + label {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  background-image: url('../img/small_ck_green.png');
+  /* background-position: center; */
+  background-size: 100% 100%;
+  /* background-color: red; */
 }
 
 /* font style */
 form dt span {
   font-size: 15px;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 form dt span.check-item {
@@ -97,3 +156,18 @@ button {
 button[type=reset]  { background: #8E8E8E; }
 
 button[type=submit] { background: #03C75A; }
+
+
+/* 어린이용 안내 버튼 */
+button#child {
+  width: 91.91px;
+  height: 28px;
+  right: 0;
+  border: 1px solid #08A600;
+  font-size: 12px;
+  background-color: white;
+}
+
+button#child a {
+  color: #08A600;
+}
