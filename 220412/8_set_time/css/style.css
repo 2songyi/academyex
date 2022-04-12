@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* { margin: 0; padding:0; }
+html, body { height: 100%; }
+
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 15px black;
+}
+#txt {
+  position: relative;
+  /* top: 120px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* 새로로배열 */
+  width: 100vw;
+  height: 100vh;
+}
+#txt p {
+color: skyblue;
+}
