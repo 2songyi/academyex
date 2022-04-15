@@ -1,0 +1,38 @@
+@charset "UTF-8";
+* {margin: 0; padding: 0;}
+html, body { height: 100%; }
+li { list-style: none; }
+button { border: 0; background: none; }
+button, input { outline: none; }
+
+#text {
+  transition: 1s;
+}
+
+.change-width {
+  width: 300px;
+}
+.change-bg {
+  background-color: skyblue;
+}
+.change-font-style  {
+  font-size: 25px;
+  color: white;
+}
+
+#sideMenu {
+  position: fixed;
+  background: green;
+  top: 0;
+  right: -300px;
+  /* 자신의 넓이만큼 오른쪽으로 들어가야함 */
+  bottom: 0;
+  width: 300px;
+  z-index: 10;
+  transition: 1s;
+}
+
+#sideMenu.on {
+  right: 0;
+  /* 메뉴클릭시 클래스에 on주면 다시 나오게됨 */
+}

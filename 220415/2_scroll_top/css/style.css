@@ -1,0 +1,34 @@
+@charset "UTF-8";
+* {margin: 0; padding: 0;}
+html, body { height: 100%;}
+li { list-style: none; }
+button { border: 0; background: none; }
+button, input { outline: none; }
+
+#mydiv {
+  width: 250px;
+  height: 250px;
+  overflow: auto;  /* 알아서 스크롤생기게 */
+}
+
+#content {
+  width: 2000px;
+  /* height: 800px; /*가로스크롤만들었음*/
+  background: skyblue;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+}
+button {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background: lightgrey;
+}
+button.x-axis {
+  background: grey;
+}
