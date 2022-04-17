@@ -83,10 +83,17 @@ function startTime() {
 
 //버튼 클릭시 자리비움텍스트
 function textAdd() {
-  let text = ' 잠시 자리 비움 😉🤚';
-  document.querySelector('h3').innerHTML = text;
-  console.log(text);
+  let elem = document.querySelector('#addText');
+  let active = elem.classList.contains('on');
+  console.log(active);
+
+  if (active) {
+    elem.classList.remove('on');
+  } else {
+    elem.classList.add('on');
+  }
 }
+
 
 
 // 00:00:00
