@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>jquery</title>
+  <link rel="stylesheet" href="./css/initial.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- 파일 다운로드 로컬에서 적용 -->
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <!-- 최신라이브러리 가져오기(CDN) -->
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <!-- 버전별 라이브러리 가져오기 CDN(분산네트워크)방식-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+  <!-- <script type="text/javascript">
+      $(document).ready(function(){
+        console.log('test');
+      }); //dom요소 선택 $() window.onload=function(){}랑 비슷함
+      $(function(){
+        console.log('축약형');
+      });
+      alert('jquery!')
+    </script> -->
+</head>
+
+<body>
+  <!-- 1)tag, id 값으로 선택 -->
+  <!-- <ul>
+      <li id="first">test1</li>
+      <li id="second">test2</li>
+      <li id="third">test3</li>
+      <li id="fourth">test4</li>
+    </ul> -->
+
+  <!-- class 값으로 선택 -->
+  <!-- <ul>
+      <li class="first">test1</li>
+      <li class="second">test2</li>
+      <li class="third">test3</li>
+      <li class="fourth">test4</li>
+    </ul> -->
+
+  <!-- 2)자손선택 -->
+  <!-- <div>
+    <p>jquery test</p>
+  </div>
+  <ul>
+    <li class="first">
+      <span>안녕하세요.</span>
+      <p>
+        저는 이송이입니다.
+        <span>저는 25살 입니다.</span>
+      </p>
+      text1
+    </li>
+    <li class="second">
+      <span>안녕하세요.</span>
+      <p>
+        저는 이송이입니다.
+        <span>저는 25살 입니다.</span>
+      </p>
+      text2
+    </li>
+    <li class="third">
+      <span>안녕하세요.</span>
+      <p>
+        저는 이송이입니다.
+        <span>저는 25살 입니다.</span>
+      </p>
+      text3
+    </li>
+    <li class="fourth">
+      <span>안녕하세요.</span>
+      <p>
+        저는 이송이입니다.
+        <span>저는 25살 입니다.</span>
+      </p>
+      text4
+    </li>
+  </ul> -->
+
+  <!-- 3) ul>li*3>a[href="#"]+ul.submenu>li*4>a[href="#"]>{submenu$} -->
+  <ul>
+    <li>
+      <a href="#">
+        <p><span>menu1</span></p>
+      </a>
+      <ul class="submenu">
+        <li>
+          <a href="#">
+            <p><span>submenu1</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu2</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu3</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu4</span></p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <p><span>menu2</span></p>
+      </a>
+      <ul class="submenu">
+        <li>
+          <a href="#">
+            <p><span>submenu1</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu2</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu3</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu4</span></p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">
+        <p><span>menu3</span></p>
+      </a>
+      <ul class="submenu">
+        <li>
+          <a href="#">
+            <p><span>submenu1</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span></span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu3</span></p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p><span>submenu4</span></p>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</body>
+
+</html>
