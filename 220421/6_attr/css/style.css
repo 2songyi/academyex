@@ -1,0 +1,25 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+ul, ol { list-style: none; margin: 0;}
+a { color: #666666; }
+
+body {
+  transition: 5s;
+}
+
+body.bg-red { background-color: red; }
+body.bg-blue { background-color: blue; }
+body.bg-yellow { background-color: yellow; }
+body.bg-black { background-color: black; }
+
+p { color: red; }
+
+#wrap-id {
+  position: absolute;
+  display: inline-block;
+  top: -500px;
+  transition: 5s;
+}
+body.bg-yellow #wrap-id {
+  top: 0;
+}
