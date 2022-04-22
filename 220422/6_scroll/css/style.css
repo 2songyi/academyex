@@ -1,0 +1,52 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+body {
+  color: white;
+  background: #d9d9d9;
+  font-size: 18px;
+  text-align: center;
+  min-width: 380px;
+}
+ul, ol { list-style: none; margin: 0;}
+a { color: #666666; }
+
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+/* nav area */
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+nav li {
+  display: inline-block;
+  line-height: 70px;
+  padding: 0 10px; /*textalign을 body에 줘서 가운데 옴*/
+}
+
+/*section area*/
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#screen1 {
+  background-color: #43b29d;
+}
+
+#screen2 {
+  background-color: #efc94d;
+}
+
+#screen3 {
+  background-color: #e1793d;
+}
