@@ -1,0 +1,69 @@
+@charset "UTF-8";
+html, body { height: 100%;  }
+ul, ol { list-style: none; margin: 0;}
+a { color: #666666; text-decoration: none;}
+
+/* font-family: 'NanumSquare', 'Noto Sans KR', 'notokr', 'Nanum Gothic', 'Malgun Gothic', sans-serif; */
+/* header 영역 */
+#header {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 29px 150px;
+}
+
+#logo { float: left; }
+
+#header .h-inner {
+  width: 1320px;
+  margin: 0 auto;
+
+}
+
+#header .inner {
+  float: right;
+}
+
+#header .inner #gnb {
+  margin-right: 103px;
+}
+
+#header .inner > ul {
+  overflow: hidden;
+  float: left;
+}
+
+#header .inner > ul > li {
+  float: left;
+  height: 20px;
+  padding: 0 24px;
+}
+
+#header .inner a {
+  color: #AAA;
+  font-size: 16px;
+}
+/* header영역 끝 */
+
+/* main 영역 */
+/* #first {
+height: 100vh;
+} */
+
+#main-video {
+position: absolute;
+
+top: 0px;
+left: 0px;
+
+width: 100%;
+height: 100%;
+z-index: -1;
+overflow: hidden;
+z-index: -1;
+}

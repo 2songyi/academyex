@@ -1,0 +1,70 @@
+@charset "UTF-8";
+html, body { height: 100%; }
+body {
+  background: rgb(37, 196, 129);
+  background: linear-gradient(90deg, rgba(37, 196, 129, 1) 0%, rgba(37, 183, 196, 1) 100%);
+}
+a { color : #666; }
+
+section {
+  margin: 50px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform:
+}
+
+td {
+  padding: 15px;
+  text-align: left;
+  vertical-align: middle; /*테이블 내에서 상하 정렬 , default가 top이다.*/
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tbl-header {
+  background-color: rgba(255, 255, 255, .3);
+}
+.tbl-content {
+  height: 300px;
+  overflow-x: auto; /*가로로 길어지면 스크롤 생기게*/
+  margin-top: 0;
+  border: 1px solid rgba(255, 255, 255, .3);
+}
+/*.tbl-content td {
+  width: 250px; 모바일이거나 항목이 많아졌을때 스크롤생기게 하기 위해
+} */
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); /*중찹이돼서 진하게 나옴*/
+}
+/* ex에서는 안먹힘 */
