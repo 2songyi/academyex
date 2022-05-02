@@ -1,0 +1,39 @@
+@charset "UTF-8";
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+ul, ol { list-style: none; }
+a { color: #666; text-decoration: none; }
+
+table {
+  width: 500px;
+  margin: 100px auto;
+}
+
+table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+table tr:not(:first-child):hover {
+  background: #bed8ff;
+}
+
+th {
+  background: #222;
+  color: white;
+  height: 32px;
+  vertical-align: middle;
+}
+
+th:nth-child(odd) {
+  background: #444;
+}
+
+th, td {
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* script code에 사용 될 class */
+.hover {
+  background: #bed8ff;
+}

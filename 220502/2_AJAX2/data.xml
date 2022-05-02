@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channer>
+  <!-- class명처럼 임의의 태그 -->
+  <item>
+    <company>YTN</company>
+    <title>우크라 전쟁에 동나는 식용유...유럽 마트선 "1인당 2병만"</title>
+    <date>2022.05.02 오전 11:32</date>
+    <name>이종수 기자</name>
+    <link>https://n.news.naver.com/mnews/article/052/0001734000?sid=104</link>
+    <description><![CDATA[세계적 곡창인 우크라이나에 전쟁이 나면서 식용유도 대한이 일어났다고 뉴욕타임스가 보도했습니다.]]></description>
+  </item>
+  <item>
+    <company>서울신문</company>
+    <title>힘겨운 식용유 보릿고개...유럽 1인 구매 제한, 인도는 튀김 대신 찜</title>
+    <date>2022.05.02 오전 5:07</date>
+    <name>김소라 기자</name>
+    <link>https://n.news.naver.com/mnews/article/081/0003269845?sid=104</link>
+    <description><![CDATA[전 세계가 힘겨운 '식용유 보릿고개'를 넘고있다. 우르라이나는 해바라기유의 45%를 공금해(중략)가로 막혔다.]]></description>
+  </item>
+  <item>
+    <company>KBS</company>
+    <title>신규 확진 87일 만에 2만 명대... 오늘부터 실외마스크 의무 완화</title>
+    <date>2022.05.02 오전 9:32</date>
+    <name>이현정 기자</name>
+    <link>https://n.news.naver.com/article/056/0011258705?ntype=RANKING</link>
+    <description><![CDATA[국내 코로나19 신규 확진자가 87일 만에 2만 명대를 기록했습니다.]]></description>
+  </item>
+
+</channer>

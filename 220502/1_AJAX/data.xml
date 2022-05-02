@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channer>
+  <!-- class명처럼 임의의 태그 -->
+  <title>web professional</title>
+  <link>http://naver.com</link>
+  <data>월요일 5월 2일</data>
+  <item>
+    <title>"우주에서 숨쉰다." 지구 밖 '산소분자' 최초 발견</title>
+    <data>월요일 5월 2일</data>
+    <link>http://daum.net</link>
+    <description><![CDATA[<strong>지구</strong>를 떠나서 우주에서 숨을 쉬는 일이(중략) 설명했다.]]></description>
+  </item>
+  <item>
+    <title>북한 해커 남한 온라인게임 털어 외화벌이</title>
+    <data>일요일 5월 1일</data>
+    <link>http://facebook.com</link>
+    <description>국산 온라인게임 프로그램 해킹해(중략) 단속할 필요가 있다고 말한다.</description>
+  </item>
+  <item>
+    <title>[종합] 코로나19 확진자 146명 증가, 서울 39명, 경기 42명</title>
+    <data>토요일 4월 30일</data>
+    <link>http://www.fnnews.com</link>
+    <description>국산 온라인게임 프로그램 해킹해(중략) 단속할 필요가 있다고 말한다.</description>
+  </item>
+</channer>
