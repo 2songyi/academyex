@@ -1,0 +1,84 @@
+@charset "UTF-8";
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+ul, ol { list-style: none; }
+a { color: #666; text-decoration: none; }
+
+#container {
+  width: 600px;
+  margin: 20px auto;
+}
+
+#navi {
+  width: 600px;
+}
+
+#navi ul li {
+  width: 120px;
+  float: left;
+}
+
+#navi ul li img {
+  width: 100%;
+  border: 3px solid white;
+}
+
+#navi {
+  overflow: hidden;
+}
+
+#navi img {
+  cursor: pointer;
+}
+
+#navi .page-wrap {
+  width: 1800px;
+  /* 600*3 page-wrap의 초기너비값 */
+}
+
+#navi .page-wrap .page {
+  float: left;
+}
+
+.navi-wrap {
+  position: relative;
+}
+
+.navi-wrap .btn-box {
+  width: 24px;
+  height: 48px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  overflow: hidden;
+}
+/* prev, next 버튼을 좌우로 배치하기 */
+.navi-wrap .btn-box img { /* navi안에도 이미지가 있어서 바로 아래에있는걸로 선택 */
+  cursor: pointer;
+  position: absolute;
+}
+
+.navi-wrap .btn-box:nth-of-type(2) {
+  left: 0;
+  transform: translate(-100%, -50%);
+}
+
+.navi-wrap .btn-box:nth-of-type(3) {
+  right: 0;
+  transform: translate(100%, -50%);
+}
+.navi-wrap .btn-box:nth-of-type(3) img {
+  left: -13px
+}
+
+#main {
+  position: relative;
+  width: 600px;
+  height: 452px;
+}
+
+#main img {
+  position: absolute;
+  width: 100%;
+  border: 3px solid white;
+}
