@@ -1,0 +1,27 @@
+.thumb-wrap {
+  position: relative;
+}
+
+.thumb-button-next, .thumb-button-prev {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: calc(50% + 37.5px);
+  transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.thumb-button-next.swiper-button-disabled, .thumb-button-prev.swiper-button-disabled  {
+  /* 마지막페이지나 첫페이지라서 더이상 클릭못할때 흐려지게 */
+  opacity: 0.3;
+}
+
+.thumb-button-next {
+  right: 10px;
+  background: url('../img/main_banner/navi_next.png');
+}
+.thumb-button-prev {
+  left: 10px;
+  background: url('../img/main_banner/navi_prev.png');
+}
