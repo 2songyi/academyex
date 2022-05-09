@@ -1,0 +1,439 @@
+@charset "UTF-8";
+/* common ui */
+
+.button {
+  font-size: 16px;
+  font-weight: 700;
+  height: 32px;
+  line-height: 32px;
+  letter-spacing: 1px; /*자간 간격*/
+  display: inline-block;
+  padding: 8px 32px;
+  margin: 10px;
+  border-radius: 50px;
+  background: #18d26e;
+  text-transform: uppercase;
+  transition: .5s;
+}
+.button:hover {
+  background: white;
+  color: #18d26e;
+  transition: .5s;
+}
+
+
+.back-to-top {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  bottom: 10px;
+  background: black;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  opacity: 0;
+  transition: 1s;
+  z-index: 800;
+}
+.on {
+  opacity: 1;
+}
+.back-to-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+/* mobile button line style */
+
+/* 체크박스 사라지게 만들기 */
+input[type=checkbox]#gnbcheck {
+  display: none;
+}
+
+#gnbbtn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  /* background: red; */
+  z-index: 500;
+  display: none;
+}
+#gnbbtn > span {
+  position: absolute;
+  top: 16px;
+  height: 1.6px;
+  width: 32px;
+  background: #ffffff;
+  transform: translateY(-50%);
+}
+#gnbbtn >span:nth-child(1) {
+  top: 8px;
+}
+#gnbbtn >span:nth-child(3) {
+  top: 24px;
+}
+
+
+/* mobile close button */
+#mobile-close-btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  /* background: blue; */
+  display: none;
+}
+#mobile-close-btn:before, #mobile-close-btn:after {
+  content: '';
+  position: absolute;
+  height: 1.6px;
+  width: 32px; /*width: 100%;*/
+  top: 16px;
+  background: #ffffff;
+  transform: translateY(-50%) rotate(45deg);
+}
+#mobile-close-btn:before {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+
+/* header */
+#header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  z-index: 800;
+  background: rgba(0,0,0,.3);
+}
+#top-logo {
+  float: left;
+}
+#top-logo a {
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  font-size: 25px;
+}
+
+
+/* gnb */
+#gnb {
+  float: right;
+}
+#gnb ul {
+  overflow: hidden; /*li 정렬*/
+}
+#gnb ul li {
+  float: left;
+}
+#gnb ul li a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+}
+
+
+/* section */
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section:nth-child(odd) {
+  background: gray;
+}
+
+section.active {
+  /* background: skyblue; */
+  transition: 1s;
+}
+
+section > article {
+  text-align: center;
+  padding: 0 20%;
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,.8);
+}
+
+section > article > h2 {
+  font-size: 40px;
+}
+
+section > article > p {
+  font-size: 20px;
+}
+
+section .row {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /*25%로 밑에서 잡아뒀으니 그 이상꺼는 아래로 떨어트려줌*/
+  width: 1410px;
+  color: #333;
+  padding: 120px 0;
+  z-index: 500;
+  box-sizing: border-box;
+}
+
+section .row .column {
+  flex: 25%;
+}
+
+section .row .column .inner.none-type {
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+section .row .column .inner {
+  text-align: center;
+  margin: 15px;
+  padding: 15px;
+  border: 1px solid #f1f1f1;
+  background: white;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+}
+
+section .row .column .inner img {
+  width: 100%;
+}
+
+section .row .column .inner img.shadow {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+  border: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  transition: 1s;
+}
+section .row .column .inner img.shadow:hover {
+  box-shadow: none;
+}
+
+
+/* section row title style  */
+section .row > h2 {
+  position: absolute;
+  height: 80px;
+  line-height: 80px;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+
+/*실습 : before after 가상요소를 사용해서 언더라인을 만들기
+  공통- position: absolute; x축 가운데 정렬;
+  1번라인- width: 120px; height: 1px; background: #ddd; h2부모요소의 bottom 1px;
+  2번라인- width: 40px; height: 3px; background: #18d26e; h2부모요소의 bottom 0px*/
+section .row > h2:before, section .row > h2:after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+section .row > h2:before {
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+section .row > h2:after {
+  width: 40px;
+  height: 3px;
+  background: #18d26e;
+  bottom: 0px;
+  left: calc(50% - 20px);
+}
+
+/* progress bar style */
+.progressbar .items-wrap {
+  overflow: hidden; /*text넘침 방지*/
+  color: white;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, .3);
+}
+
+.progressbar .items-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.progressbar .items {
+  overflow: hidden;
+  box-sizing: 6px 10px;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
+  width: 300px;
+  /* background: transparent; */
+  background: skyblue;
+}
+
+.progressbar .items .title {
+  float: left;
+}
+
+.progressbar .items .percent {
+  float: right;
+}
+
+.progressbar .items-wrap:nth-of-type(1) .items {
+  background: #68A7AD;
+}
+.progressbar .items-wrap:nth-of-type(2) .items {
+  background: #99C4C8;
+}
+.progressbar .items-wrap:nth-of-type(3) .items {
+  background: #E5CB9F;
+}
+.progressbar .items-wrap:nth-of-type(4) .items {
+  background: #EEE4AB;
+}
+
+/* progressbar transition / animation */
+section.active .row .column .inner.progressbar .items-wrap:nth-of-type(1) .items {
+  width: 50%;
+  transition: 1s;
+}
+
+section.active .row .column .inner.progressbar .items-wrap:nth-of-type(2) .items {
+  width: 80%;
+  transition: 1s .25s;
+}
+
+section.active .row .column .inner.progressbar .items-wrap:nth-of-type(3) .items {
+  width: 60%;
+  transition: 1s .5s;
+}
+
+section.active .row .column .inner.progressbar .items-wrap:nth-of-type(4) .items {
+  width: 70%;
+  transition: 1s .5s;
+}
+
+section#intro {
+  background: url('../img/intro/3.jpg') no-repeat;
+  background-size: cover;
+}
+
+section#myprofile {
+  background: url('../img/bg/about_bg.jpg');
+  background-size: cover;
+}
+
+section#myprofile .row .column .inner .job {
+  color: #999;
+  font-size: 14px;
+}
+
+section#myprofile .row .column .inner img {
+  width: 20%;
+  border-radius: 100%;
+}
+
+section#myprofile:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .92);
+}
+
+section#portfolio .row .column .inner p {
+  text-align: left;
+}
+
+section#portfolio .row .column .inner img {
+  border-radius: 5px;
+}
+
+section#myskill {
+  background: url('../img/bg/my_skill_bg.jpg') no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /*배경화면 고정*/
+}
+
+section#myskill .row > h2, section#MySkill .row .column .inner > p {
+  color: white;
+}
+
+/* section .row {
+  opacity: 0;
+  transform: translateY(1000px);
+  transition: 1s;
+}
+
+section.active .row {
+  opacity: 1;
+  transform: translateY(0px);
+} */
+
+section:nth-child(odd) .row {
+  opacity: 0;
+  transform: translateX(1000px);
+  transition: 1s;
+}
+
+section:nth-child(even) .row {
+  opacity: 1;
+  transform: translateX(-1000px);
+  transition: 1s;
+}
+
+section.active .row {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* media query */
+@media screen and ( max-width: 767px ) {
+  input[type=checkbox]#gnbcheck:checked ~ #header #gnb{
+    left: 0;
+  }
+
+  #mobile-close-btn {
+    display: block;
+  }
+
+  #gnbbtn { display: block; }
+
+  #gnb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.8);
+    transition: .5s ease-in-out;
+    z-index: 600;
+  }
+
+  #gnb ul {
+    padding-top: 50px;
+  }
+
+  #gnb ul li {
+    width: 100%; /*float해제시키기*/
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+}
