@@ -15,12 +15,12 @@
   text-transform: uppercase;
   transition: .5s;
 }
+
 .button:hover {
   background: white;
   color: #18d26e;
   transition: .5s;
 }
-
 
 .back-to-top {
   position: fixed;
@@ -64,6 +64,7 @@ input[type=checkbox]#gnbcheck {
   z-index: 500;
   display: none;
 }
+
 #gnbbtn > span {
   position: absolute;
   top: 16px;
@@ -72,9 +73,11 @@ input[type=checkbox]#gnbcheck {
   background: #ffffff;
   transform: translateY(-50%);
 }
+
 #gnbbtn >span:nth-child(1) {
   top: 8px;
 }
+
 #gnbbtn >span:nth-child(3) {
   top: 24px;
 }
@@ -155,9 +158,9 @@ section {
   overflow: hidden;
 }
 
-/* section:nth-child(odd) { */
+section:nth-child(odd) {
   /* background: gray; */
-/* } */
+}
 
 section.active {
   /* background: skyblue; */
@@ -401,11 +404,147 @@ section:nth-child(even) .row {
 
 section.active .row {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0px);
+}
+
+/* footer area */
+#footer {
+  background: #000; /*black = #000000 = #000*/
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: #111;
+  padding: 60px 0 30px; /* top 60, left right 0, bottom 30 */
+}
+
+#footer .container {
+  /* footer-top의 .container와 #footer의 자식요소 .container의 공통 스타일 */
+  width: 1140px;
+  margin: 0 auto; /*가운데 정렬*/
+}
+
+#footer > .container { /*copyright영역*/
+  padding: 30px 0;
+  text-align: center;
+}
+
+#footer .container .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;/*개수만큼 너비 꽉 차면 아래로 떨어트리려고*/
+}
+
+#footer .container .row .column {
+  flex: 25%;
+  padding: 0 10px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+#footer .container .row .column.footer-logo h3 {
+  font-size: 34px;
+  padding: 2px 0 2px 10px;
+  border-left: 4px solid #18d26e;
+  line-height: 1;
+  font-weight: 700; /*=bold*/
+  letter-spacing: 3px;
+}
+
+#footer .container .row .column h4 {
+  position: relative;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* 실습 :
+  h4의 하단의 underline만들기
+  1. before, after가상요소로 만들기
+  2. #555, #18d26e
+  3. 너비: h4의 너비와 같다, 60px
+  4. h4의 하단에 배치
+  */
+
+#footer .container .row .column h4:before, #footer .container .row .column h4:after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0px;
+}
+
+#footer .container .row .column h4:before {
+  width: 100%; /*right: 0;*/
+  height: 2px;
+  background: #555;
+}
+
+#footer .container .row .column h4:after {
+  width: 60px;
+  height: 3px;
+  background: #18d26e;
+}
+
+#footer .container .row .column ul li {
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+}
+
+#footer .container .row .column ul li:nth-child {
+  padding-top: 0;
+}
+
+#footer .container .row .column p {
+  line-height: 26px;
+}
+
+#footer .container .row .column.news input[type=text] {
+  border: 0;
+  padding: 6px 8px;
+  width: 65%;
+  box-sizing: border-box;
+}
+
+#footer .container .row .column.news input[type=submit] {
+  border: 0;
+  padding: 6px 0px;
+  width: 35%;
+  background: #18d26e;
+  color: white;
+  cursor: pointer;
 }
 
 /* media query */
+@media screen and (max-width: 1200px) {
+  section .row .column {
+    flex: 50%; /*4개로 나오던거 2개로 나옴*/
+  }
+  section#myprofile .row .column .inner img {
+    width: 40%;
+  }
+  #footer .container {
+    width: 100%;
+  }
+  #footer .container .row .column {
+    flex: 50%;
+  }
+}
+
 @media screen and ( max-width: 767px ) {
+  section .row .column {
+    flex: 100%;
+  }
+  section#ourclients .row .column, section#mytools .row .column {
+    flex: 50%;
+  }
+
+  #footer .container .row .column {
+    flex: 100%;
+  }
+
   input[type=checkbox]#gnbcheck:checked ~ #header #gnb{
     left: 0;
   }
@@ -435,5 +574,14 @@ section.active .row {
     width: 100%; /*float해제시키기*/
     padding-left: 10px;
     box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  section#ourclients .row .column, section#mytools .row .column {
+    flex: 100%;
+  }
+  section#myprofile .row .column .inner img {
+    width: 50%;
   }
 }
