@@ -1,9 +1,0 @@
-@charset "UTF-8";
-
-button + dl {
-  display: none;
-}
-
-button.on + dl {
-  display: block;
-}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  } to {
+    width: 23ch;
+  }
+}
+
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing {
+  width: 23ch; /*px, %, em, rem, ch*/
+  /* 요소 글꼴의 glyph "0" 의 사전 길이 (너비) 입니다. 22ch: 글자 22개*/
+  white-space: nowrap; /*글자 안떨어트리고 옆으로 쭉 펼치기*/
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  /* animation: typing 2s steps(23); /*2초동안 23번 나눠서 animation을 작동시키겠다*/
+  animation: typing 2s 2s steps(23) both, blink .5s step-end infinite alternate;
+}

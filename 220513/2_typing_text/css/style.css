@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+@keyframes cursorAction {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, #00c4ff, #9d1bb2);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+}
+
+.headline h1 {
+  letter-spacing: 1.6px;
+  font-weight: 300;
+  height: 85px; /*텍스트가 존재하지 않을 때 높이를 유지하기 위해 필요함*/
+}
+
+.text {
+  /* opacity: 0; */
+}
+
+.cursor {
+  position: absolute;
+  display: block;
+  height: 100%;
+  top: 0;
+  right: -5px; /*글자랑 겹칠 수 있어서 옆으로 밀어줌*/
+  width: 2px;
+  /* change color of curosr here */
+  background-color: white;
+  z-index: 1;
+  animation: cursorAction 0.5s infinite alternate;
+
+
+
+}
