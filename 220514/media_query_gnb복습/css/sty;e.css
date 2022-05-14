@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+input[type=checkbox]#gnbcheck {
+  display: none;
+}
+
+#gnbbtn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  /* background: red; */
+  z-index: 500;
+  display: none;
+}
+
+#gnbbtn > span {
+  position: absolute;
+  top: 16px;
+  height: 1.6px;
+  width: 32px;
+  background: #ffffff;
+  transform: translateY(-50%);
+}
+
+#gnbbtn >span:nth-child(1) {
+  top: 8px;
+}
+
+#gnbbtn >span:nth-child(3) {
+  top: 24px;
+}
+
+
+/* mobile close button */
+#mobile-close-btn {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: 10px;
+  /* background: blue; */
+  display: none;
+}
+#mobile-close-btn:before, #mobile-close-btn:after {
+  content: '';
+  position: absolute;
+  height: 1.6px;
+  width: 32px; /*width: 100%;*/
+  top: 16px;
+  background: #ffffff;
+  transform: translateY(-50%) rotate(45deg);
+}
+#mobile-close-btn:before {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+
+/* header */
+#header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  z-index: 800;
+  background: rgba(0,0,0,.3);
+}
+#top-logo {
+  float: left;
+}
+#top-logo a {
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  font-size: 25px;
+}
+
+
+/* gnb */
+#gnb {
+  float: right;
+}
+#gnb ul {
+  overflow: hidden; /*li 정렬*/
+}
+#gnb ul li {
+  float: left;
+}
+#gnb ul li a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+}
+
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  min-height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
