@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+//scss 파일 분화
+@import "var.scss"; //var 공통 변수를 뽑아냄
+// var.scss에서만 저장해서 변경이 안되고, import기 때문에 최종적으로 나오는 이 파일에서 저장해야한다.
+@import "mixin.scss"; //공통 mixin
+@import "initial.scss"; //css 초기화
+
+body {
+  width: $siteWidth;
+}

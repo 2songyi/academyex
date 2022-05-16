@@ -1,0 +1,69 @@
+@charset "UTF-8";
+$height: 50px; //변수처리
+/*
+css
+:root {
+  --height: 50px;
+}*/
+$boxSizes: 100, 200, 300; //배열로 변수 선언
+* { margin: 0; padding: 0; }
+a {
+  text-decoration: none;
+  color: #666;
+}
+ul, li {
+  list-style: none;
+}
+
+#header {
+  height: $height;
+  /*css변수 적용 방식
+  height: var(--height);*/
+  background: lightgray;
+  overflow: hidden;
+  h1 {
+    line-height: $height;
+    float: left;
+  }
+  #gnb {
+    float: right;
+    ul {
+      overflow: hidden;
+      li {
+        float: left;
+        a {
+          line-height: $height;
+        }
+      }
+    }
+  }
+}
+
+// box layout
+// css구조선택자
+// .box:nth-child(1) {
+//   width: 100px;
+//   height: 100px;
+// }
+// .box:nth-child(2) {
+//   width: 200px;
+//   height: 200px;
+// }
+// .box:nth-child(3) {
+//   width: 300px;
+//   height: 300px;
+// }
+
+@mixin common-box {
+  position: absolute;
+  display: inline-block;
+  border: 1px solid #dddddd;
+}
+@each $size in $boxSizes { //배열 개수에 만큼 value를 던져줌
+  .box-#{$size} {
+    @include common-box;
+    width: #{$size}px;
+    height: #{$size}px;
+  }
+
+}
