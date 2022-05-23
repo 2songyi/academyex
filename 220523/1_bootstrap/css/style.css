@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.container .col, .container-fluid .col {
+  /* background-color: lightgrey; */
+  color: #666;
+  text-align: center;
+}
+
+.container-fluid .row + .row {
+  margin-top: 10px;
+}
+
+.col .table + .btn {
+  float: right;
+}
+
+.col:nth-child(odd) {
+  /* background: skyblue; */
+}
+
+.col.text {
+  padding: 30px;
+}
+
+.col.img-box {
+  /* background-image: url('../img/thumb_nail01.jpg'); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.container-fluid .col.img-box {
+  background-color: transparent;
+}
+
+.container-fluid .col.img-box img {
+  /* width: 100%; */
+  /* class="img-fluid"넣으면 됨 */
+}
+
+.img-thumbnail {
+  padding: 1.25rem;
+  /* 원래 잡혀있는 설정 재 선언해서 커스텀 */
+}
