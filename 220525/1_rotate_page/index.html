@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <title>rotate page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <h1>
+          <a href="#"><img src="./img/logo.svg" alt="heineken"></a>
+        </h1>
+        <nav id="gnb">
+          <ul>
+            <li><a href="#">Find a heineken</a></li>
+            <li><a href="#">Our story</a></li>
+            <li><a href="#">Sponsorships</a></li>
+            <li><a href="#">Our products</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section>
+          <!-- 작은 섬네일 이미지 영역 -->
+          <nav id="pagenation">
+            <ul>
+              <li class="active"><img src="./img/img01.png" alt="img01" title="Original"></li>
+              <li><img src="./img/img02.png" alt="img02" title="Heineken® 0.0"></li>
+              <li><img src="./img/img03.png" alt="img03" title="Light"></li>
+              <li><img src="./img/img04.png" alt="img04" title="The Can"></li>
+            </ul>
+          </nav>
+          <!-- 큰 이미지 노출 영역 -->
+          <div class="items change-img">
+            <img src="./img/img01.png">
+          </div>
+          <!-- 이미지 설명 영역 -->
+          <div class="items text">
+            <h2>"The Original"</h2>
+            <p class="desc">Always refreshing to see something you recognise. Cold, fresh, high quality Heineken®. Enjoyed near and far since 1873.</p>
+            <a href="#" class="btn">discover more</a>
+          </div>
+          <!-- 회전하는 텍스트 -->
+          <div class="rotate-items">
+            <ul>
+              <!-- 로컬변수를 html로 받아옴 -->
+              <li style="--i:1"><span>The Can</span></li>
+              <li style="--i:2"><span>Ligth</span></li>
+              <li style="--i:3"><span>Heineken® 0.0</span></li>
+              <li style="--i:4"><span>Original</span></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript">
+      //변수 선언
+      const descArray = [];
+      descArray[0] = 'Always refreshing to see something you recognise. Cold, fresh, high quality Heineken®. Enjoyed near and far since 1873.'
+      descArray[1] = 'No alcohol, 100% Heineken®. We are proud of our Heineken® 0.0. Brewed with devotion and our heritage knowledge of beer.'
+      descArray[2] = 'Not just any light beer. An award-winning light beer.'
+      descArray[3] = 'On the beach, at a party or on the go? Feel and enjoy wherever you are a true touch of class with a cold can of Heineken®, the refreshing taste that is kept safe from light and air.'
+
+      let selectElem = document.querySelectorAll('#pagenation ul li');
+      let textElem = document.querySelector('.text h2');
+      let descElem = document.querySelector('.text p.desc');
+      let imgElem = document.querySelector('.change-img img');
+      let rotateElem = document.querySelector('.rotate-items ul');
+
+      selectElem.forEach((items, i) => {
+        // console.log(`${items}, ${i}`);
+        items.onclick = function(){
+          //active추가 제거
+          selectElem.forEach(check => {
+            check.classList.remove('active');
+          })
+          items.classList.add('active');
+          //title 변경
+          let title = this.firstChild.getAttribute('title');
+          textElem.innerHTML = `"${title}"`;
+          // textElem.innerHTML = this.firstChild.title;
+          //desc 변경
+          descElem.innerHTML = descArray[i];
+          //img 변경
+          let src = this.firstChild.getAttribute('src');
+          // let src = this.firstChild.src;
+          imgElem.setAttribute('src', src);
+          //rotate
+          let calc = i * 90;
+          rotateElem.style.transform = `rotate(${calc}deg)`;
+        }
+      })
+
+
+    </script>
+  </body>
+</html>
