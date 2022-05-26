@@ -1,0 +1,65 @@
+@charset "UTF-8"; // 변수선언
+$columnWidth: 6.5%;
+$gutterWidth: 2%; // mixin
+@mixin col($count) {
+  width: ($columnWidth * $count) + ($gutterWidth * ($count - 1));
+}
+// layout
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  // background: grey;
+}
+
+.container-fluid {
+  background: skyblue;
+}
+
+/*실습
+1. float 정렬 방식에서 flex 정렬 방식으로 col요소를 노출하기
+2. justify-content-start, center, end 클래스를 추가해서 정렬*/
+.row {
+  overflow: hidden;
+  // 1.
+  display: flex;
+  justify-content: space-between;
+  // 2.
+  &.justify-content-start { justify-content: flex-start; }
+  &.justify-content-center { justify-content: center; }
+  &.justify-content-end { justify-content: flex-end; }
+  [class *= col] { // col이 들어가는 모든 요소
+    // float: left;
+    // margin-left: $gutterWidth;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background: lightgrey;
+    // &:first-child {
+    //   margin-left: 0;
+    // }
+  }
+  //mixin 적용
+  //   .col-1 {
+  //     @include col(1); //mixin불러옴
+  //     //col-1일때는 균등하게 들어가겠다
+  //   }
+  //   .col-2 { @include col(2); }
+  //   .col-3 { @include col(3); }
+  //   .col-4 { @include col(4); }
+  //   .col-5 { @include col(5); }
+  //   .col-6 { @include col(6); }
+  //   .col-7 { @include col(7); }
+  //   .col-8 { @include col(8); }
+  //   .col-9 { @include col(9); }
+  //   .col-10 { @include col(10); }
+  //   .col-11 { @include col(11); }
+  //   .col-12 { @include col(12); }
+  @for $i from 1 through 12 {
+    .col-#{$i} { @include col($i); }
+  }
+}

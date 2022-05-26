@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue.js v-for</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <ul id="menu">
+          <!-- 실습
+          : v-for를 사용해 아래 메뉴를 구현하기
+          href와 menu text데이터는 menuList 변수에서 가져오기-->
+          <li v-for ="m in menuList">
+            <a v-bind:href="m.ahref">{{m.menu}}</a>
+          </li>
+          <!-- <li><a href="http://naver.com">company</a></li>
+          <li><a href="http://google.com">product</a></li>
+          <li><a href="http://daum.net">gallery</a></li>
+          <li><a href="http://instagram.com">location</a></li> -->
+        </ul>
+      </header>
+      <main>
+        <div class="container">
+          <!-- {{menuList[0].menu}}{{menuList[0].ahref}}
+          {{menuList[1].menu}}{{menuList[1].ahref}}
+          {{menuList[2].menu}}{{menuList[2].ahref}}
+          {{menuList[3].menu}}{{menuList[3].ahref}} -->
+        </div>
+      </main>
+      <footer id="footer">
+        <div class="inner">
+          <h3><a href="#">logo</a></h3>
+          <ul id="f-menu">
+            <!--실습
+            : v-for로 메뉴 구현 -->
+            <li v-for="(f, index) in fMenuList">
+              <a v-bind:href="f.ahref">{{index}}{{f.menu}}</a>
+            </li>
+            <!-- index사용하면 인덱스 넣기도 가능 -->
+            <!-- <li><a href="http://naver.com">company</a></li>
+            <li><a href="http://google.com">product</a></li>
+            <li><a href="http://daum.net">gallery</a></li>
+            <li><a href="http://instagram.com">location</a></li>
+            <li><a href="./community/notice.html">notice</a></li>
+            <li><a href="./community/faq.html">faq</a></li> -->
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#app',
+        data: {
+          menuList: [
+            {menu: 'company', ahref: 'http://naver.com'},
+            {menu: 'product', ahref: 'http://google.com'},
+            {menu: 'gallery', ahref: 'http://daum.net'},
+            {menu: 'location', ahref: 'http://instagram.com'}
+          ],
+          fMenuList: [
+            {menu: 'company', ahref: 'http://naver.com'},
+            {menu: 'product', ahref: 'http://google.com'},
+            {menu: 'gallery', ahref: 'http://daum.net'},
+            {menu: 'location', ahref: 'http://instagram.com'},
+            {menu: 'notice', ahref: './community/notice.html'},
+            {menu: 'faq', ahref: './community/faq.html'}
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
