@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue.js v-component</title>
+    <!-- <link rel="stylesheet" href="./css/style.min.css"> -->
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <header-component></header-component>
+      <main-component></main-component>
+      <footer-component></footer-component>
+    </div>
+    <div id="app2">
+      {{message}}
+      <main-component></main-component>
+      <inner-component></inner-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // 전역 component
+      Vue.component('header-component', {
+        template: '<header><h1><a href="#">Logo</a></h1></header>',
+      });
+      Vue.component('main-component', {
+        template: '<main><div class="container">container</div></main>'
+      });
+      Vue.component('footer-component', {
+        template: '<footer><h2><a href="#">footer-logo</a></h2></footer>'
+      });
+
+      let cpt = {
+        template: '<section>local-component를 전역변수화</section>'
+      }
+
+      // 첫번째 인스턴스
+      let app = new Vue({
+        el: '#app',
+        data: {
+          message: 'this is component area!'
+        },
+        // 지역 component
+        components: {
+          'inner-component': cpt //이렇게 외부에 변수로 저장해두고 써도 됨
+          // 'inner-component': {
+          //   template: '<section>local-component</section>'
+          // }
+        }
+      });
+
+      // 두번째 인스턴스
+      let app2 = new Vue({
+        el: '#app2',
+        data: {
+          message: 'second app!'
+        },
+        components: {
+          'main-component': {
+            template: '<main>main-local-componen</main>'
+          },
+          'inner-component': cpt
+        }
+      });
+    </script>
+  </body>
+</html>

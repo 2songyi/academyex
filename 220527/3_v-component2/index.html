@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>main</title>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <!-- 전역 컴포넌트로 변경 -->
+      <!-- <h1><a href="index.html">Home</a></h1> -->
+      <header-logo></header-logo>
+      <ul id="gnb">
+        <!-- v-for로 변경 -->
+        <li v-for="i in gnblink">
+          <a v-bind:href="i.ahref">{{i.title}}</a>
+        </li>
+        <!-- <li><a href="company.html">company</a></li>
+        <li><a href="product.html">product</a></li>
+        <li><a href="gallery.html">gallery</a></li>
+        <li><a href="notice.html">notice</a></li> -->
+      </ul>
+    </header>
+    <main>
+      <div class="container">
+        index page
+      </div>
+    </main>
+    <footer>
+      <div class="inner">
+        <!-- 전역 컴포넌트로 변경 -->
+        <!-- <div class="footerheader">
+          <h2><a href="index.html">logo</a></h2>
+        </div> -->
+        <footer-header></footer-header>
+        <!-- 지역 컴포넌트로 변경 -->
+        <!-- <ul>
+          <li><a href="#">list1</a></li>
+          <li><a href="#">list2</a></li>
+          <li><a href="#">list3</a></li>
+        </ul> -->
+        <footer-list></footer-list>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./js/app.js">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue.js v-on</title>
+    <link rel="stylesheet" href="./css/style.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <ul id="menu">
+          <li v-for ="m in menuList">
+            <a v-bind:href="m.ahref">{{m.menu}}</a>
+          </li>
+        </ul>
+      </header>
+      <main v-bind:class="{on:isActive}">
+        <div class="container">
+
+        </div>
+        <button id="banner-btn" v-on:click="toggleElem">{{bannerToggleText}}</button>
+      </main>
+      <footer id="footer">
+        <div class="inner">
+          <h3><a href="#">logo</a></h3>
+          <ul id="f-menu">
+            <li v-for="(f, index) in fMenuList">
+              <a v-bind:href="f.ahref">{{index}}{{f.menu}}</a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      let app = new Vue({
+        el: '#app',
+        data: {
+          isActive: false,
+          bannerToggleText: 'Close',
+          count: 0,
+          menuList: [
+            {menu: 'company', ahref: 'http://naver.com'},
+            {menu: 'product', ahref: 'http://google.com'},
+            {menu: 'gallery', ahref: 'http://daum.net'},
+            {menu: 'location', ahref: 'http://instagram.com'}
+          ],
+          fMenuList: [
+            {menu: 'company', ahref: 'http://naver.com'},
+            {menu: 'product', ahref: 'http://google.com'},
+            {menu: 'gallery', ahref: 'http://daum.net'},
+            {menu: 'location', ahref: 'http://instagram.com'},
+            {menu: 'notice', ahref: './community/notice.html'},
+            {menu: 'faq', ahref: './community/faq.html'}
+          ],
+          /*실습
+          : bgChange 배열을 생성하고 배경이미지의 경로값을 저장하는 객체를 생성하기*/
+          bgChange: [
+            {bg: './img/main_banner01.jpg', title: 'bg01'},
+            {bg: './img/main_banner02.jpg', title: 'bg02'},
+            {bg: './img/main_banner03.jpg', title: 'bg03'},
+            {bg: './img/main_banner04.jpg', title: 'bg04'}
+          ]
+        },
+        methods: {
+          //각각의 키값이 함수명이 됨
+          toggleElem: function(){
+            console.log(event.currentTarget);
+            event.currentTarget.classList.toggle('on');
+
+            // console.log(`변경 전 : ${this.isActive}`);
+            this.isActive = !this.isActive;
+            // console.log(`변경 후 : ${this.isActive}`);
+            /*실습
+            :클릭할때마다 close, open 텍스트를 번갈아서 노출하기*/
+            if (this.bannerToggleText == 'Close') { //배너 열려있을 때.
+              this.bannerToggleText = 'Open';
+              if ( this.count == this.bgChange.length - 1 ) {
+                this.count = 0; //변수 초기화
+              } else {
+                this.count++;
+              }
+            } else {
+              this.bannerToggleText = 'Close';
+              document.body.querySelector('.container').style.backgroundImage = `url("${this.bgChange[this.count].bg}")`;
+            }
+            // if (this.isActive) {
+            //   this.bannerToggleText = 'Open';
+            // } else {
+            //   this.bannerToggleText = 'Close';
+            // }
+
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
