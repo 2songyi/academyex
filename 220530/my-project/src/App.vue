@@ -17,11 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-    a {
-        color: red;
-    }
-}
+@import '@/assets/scss/style.scss';
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

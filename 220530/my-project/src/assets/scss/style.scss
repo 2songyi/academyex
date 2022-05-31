@@ -1,0 +1,13 @@
+@charset "UTF-8";
+// @import "./var.scss"; 경로 아래줄처럼 @로 잡아줘야함
+
+@import "@/assets/scss/var.scss";
+@import "@/assets/scss/mixin.scss";
+@import "@/assets/scss/initial.scss";
+@import "@/assets/scss/common.scss";
+@import "@/assets/scss/component.scss";
+@import "@/assets/scss/layout.scss";
+
+//페이지분화
+// @import "@/assets/scss/page/main.scss";
+// @import "@/assets/scss/page/subpage.scss";
