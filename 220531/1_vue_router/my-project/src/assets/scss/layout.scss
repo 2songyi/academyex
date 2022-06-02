@@ -5,10 +5,9 @@ $subMenuHeight: 40px;
 $footerHeight: 80px;
 $mainMinHeight: calc(100vh - (#{$headerHeight} + #{$footerHeight} + 51px));
 
-#wrap {
+#app {
   width: $siteWidth;
   margin: 0 auto;
-
   #header {
     position: relative;
     height: $headerHeight; //서브메뉴 만들기위해 고정형으로
