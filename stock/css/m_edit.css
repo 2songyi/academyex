@@ -172,6 +172,7 @@ button.searchbtn {
 
 /*검색결과 테이블*/
 .content-table {
+  width: 80%;
   margin-top: 30px;
 }
 .content-table table.thead {
@@ -206,12 +207,7 @@ button.searchbtn {
 .content-table table.thead th:nth-child(4) {
   width: 18%;
 }
-.content-table table.thead th:nth-child(5) {
-  width: 18%;
-}
-.content-table table.thead th:nth-child(6) {
-  width: 16%;
-}
+
 
 .tbl-content {
   margin-top: 0;
@@ -241,8 +237,13 @@ border-top: none;
   border-right: 1px solid #bdbdbd;
 }
 
-.tbl-content table td.t6 {
+.tbl-content table td.t3 input {
+  width: 50px;
   background: #f0f4fa;
+}
+.tbl-content table td.t6 input {
+  width: 40px;
+  height: 20px;
 }
 
 .tbl-content table td:last-child {
@@ -261,12 +262,7 @@ border-top: none;
 .tbl-content table td:nth-child(4) {
   width: 18%;
 }
-.tbl-content table td:nth-child(5) {
-  width: 18%;
-}
-.tbl-content table td:nth-child(6) {
-  width: 16%;
-}
+
 
 
 

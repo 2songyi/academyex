@@ -210,7 +210,10 @@ button.searchbtn {
   width: 18%;
 }
 .content-table table.thead th:nth-child(6) {
-  width: 16%;
+  width: 11%;
+}
+.content-table table.thead th:nth-child(7) {
+  width: 5%;
 }
 
 .tbl-content {
@@ -244,6 +247,10 @@ border-top: none;
 .tbl-content table td.t6 {
   background: #f0f4fa;
 }
+.tbl-content table td.t6 input {
+  width: 40px;
+  height: 20px;
+}
 
 .tbl-content table td:last-child {
   border-right: none;
@@ -265,7 +272,10 @@ border-top: none;
   width: 18%;
 }
 .tbl-content table td:nth-child(6) {
-  width: 16%;
+  width: 11%;
+}
+.tbl-content table td:nth-child(7) {
+  width: 5%;
 }
 
 

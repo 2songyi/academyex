@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="./css/initial.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/edit.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
         <!-- content영역 -->
         <div id="content">
           <div class="content-info">
-            <h2 class="title">재고검색</h2>
+            <h2 class="title">재고수정</h2>
           </div>
           <div class="content-body">
             <div class="form-table">
@@ -93,12 +93,13 @@
               <table class="thead">
                 <thead>
                   <tr>
-                    <th class="t1">id</th>
+                    <th class="t1">No</th>
                     <th class="t2">카테고리</th>
                     <th class="t3">상품코드</th>
                     <th class="t4">상품명</th>
                     <th class="t5">가격</th>
                     <th class="t6">재고</th>
+                    <th class="t7">수정</th>
                   </tr>
                 </thead>
               </table>
@@ -106,12 +107,24 @@
                 <table class="tbody">
                   <tbody>
                       <tr>
-                        <td class="t1">1</td>
-                        <td class="t2">2</td>
-                        <td class="t3">3</td>
-                        <td class="t4">4</td>
-                        <td class="t5">5</td>
-                        <td class="t6">6</td>
+                        <form class="" action="index.html" method="post">
+                          <td class="t1">1
+                            <input type="hidden" name="1" value="1">
+                          </td>
+                          <td class="t2">2</td>
+                          <td class="t3">3</td>
+                          <td class="t4">4</td>
+                          <td class="t5">5</td>
+                          <td class="t6">
+                            <input type="text" name="" value="1">
+                          </td>
+                          <td class="t7">
+                            <button type="submit" name="button">
+                              <a href="#">수정</a>
+                            </button>
+                          </td>
+                          
+                        </form>
                       </tr>
                       <tr>
                         <td class="t1">1</td>
@@ -119,7 +132,14 @@
                         <td class="t3">3</td>
                         <td class="t4">4</td>
                         <td class="t5">5</td>
-                        <td class="t6">6</td>
+                        <td class="t6">
+                           <input type="text" name="" value="1">
+                        </td>
+                        <td class="t7">
+                          <button type="button" name="button" class="edit">
+                            <a href="#">수정</a>
+                          </button>
+                        </td>
                       </tr>
                       <tr>
                         <td class="t1">1</td>
@@ -127,7 +147,14 @@
                         <td class="t3">3</td>
                         <td class="t4">4</td>
                         <td class="t5">5</td>
-                        <td class="t6">6</td>
+                        <td class="t6">
+                           <input type="text" name="" value="1">
+                        </td>
+                        <td class="t7">
+                          <button type="button" name="button">
+                            <a href="#">수정</a>
+                          </button>
+                        </td>
                       </tr>
                   </tbody>
                 </table>

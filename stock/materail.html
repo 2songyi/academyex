@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" href="./css/initial.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/mstyle.css">
 </head>
 
 <body>
@@ -49,7 +49,7 @@
         <!-- content영역 -->
         <div id="content">
           <div class="content-info">
-            <h2 class="title">재고검색</h2>
+            <h2 class="title">원재료검색</h2>
           </div>
           <div class="content-body">
             <div class="form-table">
@@ -64,24 +64,8 @@
                     </td>
                   </tr>
                   <tr>
-                    <th>카테고리</th>
-                    <td>
-                      <select name="category" class="category">
-                        <option value="all">전체</option>
-                        <option value="coffee">coffee</option>
-                        <option value="cookie">cookie</option>
-                        <option value="cake">cake</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
                     <th>검색어</th>
                     <td>
-                      <select name="findtype" class="findtype">
-                        <option value="all">전체</option>
-                        <option value="name">상품이름</option>
-                        <option value="code">상품코드</option>
-                      </select>
                       <input type="text" name="search" class="searchinput">
                       <button type="submit" name="button" class="searchbtn">검색</button>
                     </td>
@@ -93,12 +77,9 @@
               <table class="thead">
                 <thead>
                   <tr>
-                    <th class="t1">id</th>
-                    <th class="t2">카테고리</th>
-                    <th class="t3">상품코드</th>
-                    <th class="t4">상품명</th>
-                    <th class="t5">가격</th>
-                    <th class="t6">재고</th>
+                    <th class="t1">No</th>
+                    <th class="t2">재료명</th>
+                    <th class="t3">남은재료</th>
                   </tr>
                 </thead>
               </table>
@@ -109,25 +90,16 @@
                         <td class="t1">1</td>
                         <td class="t2">2</td>
                         <td class="t3">3</td>
-                        <td class="t4">4</td>
-                        <td class="t5">5</td>
-                        <td class="t6">6</td>
                       </tr>
                       <tr>
                         <td class="t1">1</td>
                         <td class="t2">2</td>
                         <td class="t3">3</td>
-                        <td class="t4">4</td>
-                        <td class="t5">5</td>
-                        <td class="t6">6</td>
                       </tr>
                       <tr>
                         <td class="t1">1</td>
                         <td class="t2">2</td>
                         <td class="t3">3</td>
-                        <td class="t4">4</td>
-                        <td class="t5">5</td>
-                        <td class="t6">6</td>
                       </tr>
                   </tbody>
                 </table>

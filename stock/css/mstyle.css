@@ -167,11 +167,13 @@ input.searchinput {
 button.searchbtn {
   width: 40px;
   height: 28px;
-
+  top: 2px;
 }
 
 /*검색결과 테이블*/
+
 .content-table {
+  width: 70%;
   margin-top: 30px;
 }
 .content-table table.thead {
@@ -202,15 +204,6 @@ button.searchbtn {
 }
 .content-table table.thead th:nth-child(3) {
   width: 20%;
-}
-.content-table table.thead th:nth-child(4) {
-  width: 18%;
-}
-.content-table table.thead th:nth-child(5) {
-  width: 18%;
-}
-.content-table table.thead th:nth-child(6) {
-  width: 16%;
 }
 
 .tbl-content {
@@ -258,16 +251,6 @@ border-top: none;
 .tbl-content table td:nth-child(3) {
   width: 20%;
 }
-.tbl-content table td:nth-child(4) {
-  width: 18%;
-}
-.tbl-content table td:nth-child(5) {
-  width: 18%;
-}
-.tbl-content table td:nth-child(6) {
-  width: 16%;
-}
-
 
 
 /* footer */
