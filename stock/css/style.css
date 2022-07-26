@@ -75,13 +75,11 @@ main {
 }
 #container {
   display: flex;
-  /* width: 100%; */
   height: calc(100vh - 80px - 50px); /*100% - header - footer*/
 }
 
 /* 왼쪽 메뉴 */
 section#snb {
-  /* width: 250px; */
   flex: 250px;
   flex-shrink: 0;
   flex-grow: 0;
@@ -109,14 +107,12 @@ section#snb nav ul li a {
 
 /*content영역*/
 #content {
-
   width: 100%;
   padding: 50px;
 }
 
 
 /* content table영역 */
-
 table {
   width: 100%;
   border-collapse: collapse;
