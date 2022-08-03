@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="./css/initial.min.css">
+  <link rel="stylesheet" href="./css/edit.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- header -->
+    <header>
+      <div class="headarea">
+        <span class="logo">
+          <a href='<c:url value="/stock/FindAllStock"/>'>IMPOS</a>
+        </span>
+        <div class="gnb">
+          <ul>
+            <li>
+              <p>OOO님</p>
+            </li>
+            <li class="mypage">
+              <a href="#">MY PAGE</a>
+            </li>
+            <li class="logout">
+              <a href="#">로그아웃</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <div id="container">
+        <!-- 왼쪽 메뉴 영역 -->
+        <section id="snb">
+          <nav class="nav">
+            <ul class="left-menu">
+              <li><a href="#">상품관리</a></li>
+              <li><a href="#">재고관리</a></li>
+              <li><a href="#">원재료관리</a></li>
+              <li><a href="#">매출관리</a></li>
+            </ul>
+          </nav>
+        </section>
+        <!-- content영역 -->
+        <div id="content">
+          <div class="content-info">
+            <h2 class="title">상품등록</h2>
+          </div>
+          <div class="content-body">
+            <div class="form-table">
+              <form class="seachform" action="/stock/FindAllStock" method="post">
+                <table class="search-table">
+                  <tr>
+                    <th>카테고리</th>
+                    <td>
+                      <select name="category" class="category">
+                        <option value="all">전체</option>
+                        <option value="coffee">coffee</option>
+                        <option value="cookie">cookie</option>
+                        <option value="cake">cake</option>
+                      </select>
+                      <select name="category" class="category">
+                        <option value="all">전체</option>
+                        <option value="coffee">coffee</option>
+                        <option value="cookie">cookie</option>
+                        <option value="cake">cake</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>상품이름</th>
+                    <td>
+                      <select name="findtype" class="findtype">
+                        <option value="all">카테고리</option>
+                        <option value="name">상품이름</option>
+                        <option value="code">상품코드</option>
+                      </select>
+                      <input type="text" name="search" class="searchinput">
+                      <button type="submit" name="button" class="searchbtn">검색</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>가격</th>
+                    <td>
+                      <button type="button" name="button" class="findall">
+                        <a href="#">전체보기</a>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>이미지 첨부</th>
+                    <td>
+                      <button type="button" name="button" class="findall">
+                        <a href="#">전체보기</a>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+                <button type="button" name="button" class="findall">
+                  <a href="#">등록하기</a>
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="inner">
+        <span class="copyright">Copyright &copy;TeamBravo</span>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
